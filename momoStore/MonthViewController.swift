@@ -84,8 +84,7 @@ class MonthViewController: UIViewController ,GlobalUI {
 extension MonthViewController: MonthPresenterViewProtocol {
 	func setup() {
 //        print(self.view.frame)
-        self.edgesForExtendedLayout = []
-        self.extendedLayoutIncludesOpaqueBars = true
+       
         
         
         self.edgesForExtendedLayout = []

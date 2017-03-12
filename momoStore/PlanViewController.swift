@@ -10,7 +10,9 @@
 
 // MARK: Imports
 
+
 import UIKit
+import SwiftyJSON
 
 import SwiftyVIPER
 
@@ -35,7 +37,7 @@ class PlanViewController: UIViewController {
 	// MARK: - Constants
 
 	let presenter: PlanViewPresenterProtocol
-
+    let storeList = StoreList()
 
 	// MARK: Variables
 
@@ -57,9 +59,17 @@ class PlanViewController: UIViewController {
 	override func viewDidLoad() {
     	super.viewDidLoad()
 		presenter.viewLoaded()
+        
+        self.edgesForExtendedLayout = []
+        self.extendedLayoutIncludesOpaqueBars = true
 
         self.title = "預約"
 		view.backgroundColor = .white
+        self.addChildViewController(storeList)
+        self.view.addSubview(storeList.view)
+//        self.present(storeList, animated: false) {
+//            
+//        }
     }
 }
 
@@ -76,33 +86,14 @@ extension PlanViewController: PlanPresenterViewProtocol {
 
 
 
-import SwiftyJSON
 
-import UIKit
-
-public struct RecordOpt {
-    //    "data": [
-    //    {
-    var id = 0
-    var start_at = ""
-    var end_at = ""
-    var description = ""
-    var status = ""
-    
-    //    "customer_thumbnail": "/stapler/App/Models/User/CustomerDetail/avatars/000/000/001/thumb/eason.jpg",
-    //    "pet_id": null,
-    var pet_name = ""
-    //    "pet_thumbnail": ""
-    //    },
-}
-
-
-class RecordList : OptsVC , GlobalUI {
-    var list = [RecordOpt]()
+class StoreList : OptsVC , GlobalUI {
+    var list = [StoreOpt]()
+    let storeMain = StoreMainModule().view
     
     override func registerCell(listView: UITableView) {
-        idt = "RecordOptCell"
-        listView.register(RecordOptCell.self, forCellReuseIdentifier: idt)
+        idt = "StoreOptCell"
+        listView.register(StoreOptCell.self, forCellReuseIdentifier: idt)
     }
     
     override func preSet(){
@@ -110,7 +101,7 @@ class RecordList : OptsVC , GlobalUI {
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = UIColor.barCr
         self.navigationController?.navigationBar.tintColor = .white
-        self.title = "紀錄"
+        self.title = "商家"
         let back = UIBarButtonItem(title: "返回", style: .plain, target: self, action: #selector(self.back))
         self.navigationItem.leftBarButtonItem = back
     }
@@ -125,21 +116,22 @@ class RecordList : OptsVC , GlobalUI {
         self.playLoadingView()
         MDApp
             .api
-            .request(.CustomerAppoint(customerId: 2, start: "2017-01-01 00:00", end: "2017-12-15 00:00"))
+//            .request(.CustomerAppoint(customerId: 2, start: "2017-01-01 00:00", end: "2017-12-15 00:00"))
+            .request(.GetStores())
             .subscribe { (event) in
                 self.stopLoadingView()
                 switch event {
                 case let .next(response):
                     //                    print("-------------------------------------------------------------------------")
-                    //                    print(JSON(data:response.data))
+                                        print(JSON(data:response.data))
                     let json = JSON(data:response.data)
-                    self.list = (json.dictionaryValue["data"]?.arrayValue.map({ (j:JSON) -> RecordOpt in
-                        var r = RecordOpt()
-                        r.start_at = j["start_at"].stringValue
-                        r.end_at = j["end_at"].stringValue
-                        r.status = j["status"].stringValue
-                        r.description = j["description"].stringValue
-                        r.pet_name = j["pet_name"].stringValue
+                    self.list = (json.dictionaryValue["data"]?.arrayValue.map({ (j:JSON) -> StoreOpt in
+                        var r = StoreOpt()
+                        r.id = j["id"].intValue
+                        r.name = j["name"].stringValue
+                        r.phone = j["phone"].stringValue
+                        r.address = j["address"].stringValue
+                        r.website = j["website"].stringValue
                         return r
                     }))!
                     self.optsTableView.reloadData()
@@ -153,7 +145,7 @@ class RecordList : OptsVC , GlobalUI {
     
     
     override func cellForRow(_ listView: UITableView, idx: IndexPath) -> UITableViewCell {
-        let cell = listView.dequeueReusableCell(withIdentifier: idt, for: idx) as! RecordOptCell
+        let cell = listView.dequeueReusableCell(withIdentifier: idt, for: idx) as! StoreOptCell
         //        cell.prepareForReuse()
         //        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuOptCell", for: indexPath) as! MenuOptCell
         //        cell.backgroundColor = .clear
@@ -168,6 +160,13 @@ class RecordList : OptsVC , GlobalUI {
     
     override func didSelect(listView: UITableView, idx: IndexPath) {
         
+        let opt = list[idx.row]
+        MDApp.store.opt = opt
+        let nav = UINavigationController(rootViewController: storeMain)
+        storeMain.preSet()
+        MDApp.store.initVC = nav
+        self.navigationController?.present(nav, animated: true, completion: {
+        })
     }
     
     override func showVC(_ vc: UIViewController) {

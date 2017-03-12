@@ -186,18 +186,18 @@ extension AppointmentDayViewController: UITableViewDelegate {
         print(time.start)
         print(time.end)
         
-        let nav = UINavigationController(rootViewController: self.memberList)
-        
-        MDApp.appointment.startAt = "\(date)\(time.start)"
-        MDApp.appointment.endAt = "\(date)\(time.end)"
-        //        MDApp.appointment.initVC = self.navigationController
-        MDApp.appointment.initVC = nav
-        
-        self.memberList.preSet()
-        //        self.navigationController?.pushViewController(self.memberList, animated: true)
-        self.navigationController?.present(nav, animated: true, completion: {
-        })
-        
+//        let nav = UINavigationController(rootViewController: self.memberList)
+//        
+//        MDApp.appointment.startAt = "\(date)\(time.start)"
+//        MDApp.appointment.endAt = "\(date)\(time.end)"
+//        //        MDApp.appointment.initVC = self.navigationController
+//        MDApp.appointment.initVC = nav
+//        
+//        self.memberList.preSet()
+//        //        self.navigationController?.pushViewController(self.memberList, animated: true)
+//        self.navigationController?.present(nav, animated: true, completion: {
+//        })
+//        
         
         
     } // fin didSelect

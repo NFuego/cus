@@ -232,6 +232,22 @@ extension AppDelegate {
 //        }
 //        
 //        
+//        
+//        MDApp
+//            .api
+//            .request(.GetStores())
+//            .subscribe { (event) in
+//                switch event {
+//                case let .next(response):
+//                    //                    print("-------------------------------------------------------------------------")
+//                    print(JSON(data:response.data))
+//                    let json = JSON(data:response.data)
+//                    break
+//                case let .error(error):
+//                    print(error)
+//                default:
+//                    break
+//                }}
 
         /*
          

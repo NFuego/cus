@@ -139,25 +139,116 @@ extension MenuOptCell {
 }
 
 
+
+
+
 // MARK: - record
+class StoreOptCell : UITableViewCell {
+    let lbName = UILabel()
+    let lbPhone = UILabel()
+    let lbAddress = UILabel()
+    let lbWebsite = UILabel()
+    let lbDescrip = UILabel()
+    
+//    "id": 3,
+//    "name": "Kenny O'Kon",
+//    "phone": "+27188098156",
+//    "address": "9822 Demario Mountain\nNorth Delbertberg, MI 39199-1107",
+//    "website": null
+
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+//        print("awake")
+        self.contentView.addSubview(lbName)
+        self.contentView.addSubview(lbPhone)
+        self.contentView.addSubview(lbAddress)
+        self.contentView.addSubview(lbWebsite)
+        self.contentView.addSubview(lbDescrip)
+
+
+        lbName.snp.makeConstraints { (make) in
+            make.leading.equalToSuperview().offset(5)
+            make.height.equalTo(h)
+            make.width.equalTo(w)
+            make.top.equalToSuperview().offset(25)
+        }
+        lbPhone.snp.makeConstraints { (make) in
+            make.leading.equalToSuperview().offset(5)
+            make.height.equalTo(h)
+            make.width.equalTo(w)
+            make.top.equalTo(lbName.snp.bottom)
+        }
+        lbAddress.snp.makeConstraints { (make) in
+            make.leading.equalToSuperview().offset(5)
+            make.height.equalTo(h)
+            make.width.equalTo(w)
+            make.top.equalTo(lbPhone.snp.bottom)
+        }
+        lbWebsite.snp.makeConstraints { (make) in
+            
+            make.leading.equalToSuperview().offset(5)
+            make.height.equalTo(h)
+            make.width.equalTo(w)
+            make.top.equalTo(lbAddress.snp.bottom)
+        }
+        lbDescrip.snp.makeConstraints { (make) in
+            make.leading.equalToSuperview().offset(5)
+            make.height.equalTo(h)
+            make.width.equalTo(w)
+            make.top.equalTo(lbWebsite.snp.bottom)
+            
+        }
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    let h = 20
+    let w = 300
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
+    
+    func update(_ store:StoreOpt){
+//        let date = DateInRegion()
+//        let str = date.string(format: .custom("yyyy-MM-dd HH:mm")) // example output: 2016-09-28 13:48:17
+
+        lbName.text = "商家:\(store.name)"
+        lbPhone.text = "電話:\(store.phone)"
+        lbAddress.text = "地址:\(store.address)"
+        lbWebsite.text = "網站:\(store.website)"
+        lbDescrip.text = "說明:\(store.description)"
+    }
+}
+
+
+//MARK: - record
 class RecordOptCell : UITableViewCell {
     let lbStart = UILabel()
     let lbEnd = UILabel()
     let lbStatus = UILabel()
     let lbDescrip = UILabel()
     let lbPetName = UILabel()
-
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-//        print("awake")
+        
+        //        print("awake")
         self.contentView.addSubview(lbStart)
         self.contentView.addSubview(lbEnd)
         self.contentView.addSubview(lbPetName)
         self.contentView.addSubview(lbStatus)
         self.contentView.addSubview(lbDescrip)
-
-
+        
+        
         lbStart.snp.makeConstraints { (make) in
             make.leading.equalToSuperview().offset(5)
             make.height.equalTo(h)
@@ -191,11 +282,11 @@ class RecordOptCell : UITableViewCell {
             
         }
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -211,7 +302,7 @@ class RecordOptCell : UITableViewCell {
     func update(_ record:RecordOpt){
         let date = DateInRegion()
         let str = date.string(format: .custom("yyyy-MM-dd HH:mm")) // example output: 2016-09-28 13:48:17
-
+        
         lbStart.text = "開始時間:\(record.start_at)"
         lbEnd.text = "結束時間:\(record.end_at)"
         lbPetName.text = "寵物:\(record.pet_name)"

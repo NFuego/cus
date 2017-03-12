@@ -160,6 +160,10 @@ public enum MDAPI {
 
     case StoreAppointByStatus(storeId:Int,status:String,start:String,end:String)
     case ShowCustomer(customerId:Int)
+    
+    
+    // Store
+    case GetStores()
 }
 
 extension MDAPI : TargetType {
@@ -169,7 +173,7 @@ extension MDAPI : TargetType {
         switch self {
             case .NewSchedule:
                  return JsonArrayEncoding.default
-            case .AcceptAppoint,.DenyAppoint:
+        case .AcceptAppoint,.DenyAppoint: //,.GetStores:
                 return JSONEncoding.default
             default:
                 return URLEncoding.default
@@ -182,6 +186,8 @@ extension MDAPI : TargetType {
         switch self {
             case .Auth:
                 return "/user/login"
+            
+    
 
         // customer
         case .ShowCustomer(let customerId):
@@ -210,7 +216,12 @@ extension MDAPI : TargetType {
             return "/appointment/\(id)/accept"
         case .DenyAppoint(let id):
             return "/appointment/\(id)/deny"
+            
+            // store
+            case .GetStores():
+            return  "/store"
         }
+        
 
 
         
@@ -221,7 +232,7 @@ extension MDAPI : TargetType {
         switch self {
         case .Auth , .NewSchedule , .NewAppoint, .AcceptAppoint, .DenyAppoint:
                 return .post
-        case .StoreSchedule , .StoreScheduleAt, .CustomerAppoint, .StoreAppoint, .ShowCustomer,.StoreAppointByStatus:
+        case .StoreSchedule , .StoreScheduleAt, .CustomerAppoint, .StoreAppoint, .ShowCustomer,.StoreAppointByStatus,.GetStores():
             return .get
         }
     }
@@ -274,6 +285,9 @@ extension MDAPI : TargetType {
         case let .ShowCustomer(customerId):
             let dic = ["id":customerId]
             return dic
+            
+        case let .GetStores():
+            return [:]
             
 //            default :
 //                return ["":""]

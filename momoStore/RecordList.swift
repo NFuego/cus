@@ -20,7 +20,7 @@ public struct RecordOpt {
 }
 
 
-class RecordList : OptsVC , GlobalUI {
+public class RecordList : OptsVC , GlobalUI {
     var list = [RecordOpt]()
 
     override func registerCell(listView: UITableView) {
@@ -44,7 +44,7 @@ class RecordList : OptsVC , GlobalUI {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         self.playLoadingView()
         MDApp
             .api
@@ -89,11 +89,11 @@ class RecordList : OptsVC , GlobalUI {
         return cell
     }
     
-    override func didSelect(listView: UITableView, idx: IndexPath) {
+    override public func didSelect(listView: UITableView, idx: IndexPath) {
         
     }
     
-    override func showVC(_ vc: UIViewController) {
+    override public func showVC(_ vc: UIViewController) {
         
     }
 

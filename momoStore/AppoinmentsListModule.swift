@@ -17,7 +17,7 @@ import SwiftyVIPER
 // MARK: -
 
 /// Used to initialize the AppoinmentsList VIPER module
-final class AppoinmentsListModule {
+final public class AppoinmentsListModule {
 
 	// MARK: - Variables
 	private(set) lazy var interactor: AppoinmentsListInteractor = {
@@ -46,5 +46,5 @@ final class AppoinmentsListModule {
 // MARK: - Module Protocol
 
 extension AppoinmentsListModule: ModuleProtocol {
-	var viewController: UIViewController { return view }
+	public var viewController: UIViewController { return view }
 }
