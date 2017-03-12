@@ -35,6 +35,7 @@ class AppointmentDayViewController: UIViewController, GlobalUI {
     var times = [ScheduleTime]()
     
     let memberList = AppointMemberListModule().view
+    let createForm = AppointmentCreateFormModule().view
     
     var date = ""
     
@@ -188,8 +189,12 @@ extension AppointmentDayViewController: UITableViewDelegate {
         
 //        let nav = UINavigationController(rootViewController: self.memberList)
 //        
-//        MDApp.appointment.startAt = "\(date)\(time.start)"
-//        MDApp.appointment.endAt = "\(date)\(time.end)"
+        MDApp.appointment.startAt = "\(date)\(time.start)"
+        MDApp.appointment.endAt = "\(date)\(time.end)"
+        // todo get pet info
+        MDApp.appointment.initVC?.pushViewController(createForm, animated: true)
+        
+        
 //        //        MDApp.appointment.initVC = self.navigationController
 //        MDApp.appointment.initVC = nav
 //        

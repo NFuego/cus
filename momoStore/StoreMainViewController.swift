@@ -67,6 +67,7 @@ extension StoreMainViewController{
     func setup(){
         self.view.addSubview(appointBtn)
        appointBtn.setTitle("預約", for: .normal)
+        appointBtn.setTitleColor(.black, for: .normal)
         appointBtn.rx.tap.subscribe(onNext: { (event) in
             print(event)
             MDApp.store.initVC?.pushViewController(self.monthVC, animated: true)

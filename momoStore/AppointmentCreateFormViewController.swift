@@ -32,7 +32,7 @@ class AppointmentCreateFormViewController: FormViewController {
 	// MARK: Variables
 
     let lbColor = UIColor.black
-    var petId = 0
+    var petId = 1
     var startAt = ""
     var endAt = ""
 
@@ -55,10 +55,12 @@ class AppointmentCreateFormViewController: FormViewController {
         super.viewWillAppear(animated)
         startAt = MDApp.appointment.startAt
         endAt = MDApp.appointment.endAt
-        petId = MDApp.appointment.petInfo.id
+    
+    // todo
+//        petId = MDApp.appointment.petInfo.id
        
         self.form.setValues([
-            kPET_IMAGE: Picture(url: MDAppURI.imgURL + MDApp.appointment.petInfo.thumbnail),
+            kPET_IMAGE: Picture(url: MDAppURI.imgURL + "TODO"),
             kPET_NAME : "",
             kSTART_TIME : startAt,
             kEND_TIME : endAt,
