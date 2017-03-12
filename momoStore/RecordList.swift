@@ -48,7 +48,7 @@ class RecordList : OptsVC , GlobalUI {
         self.playLoadingView()
         MDApp
             .api
-            .request(.StoreAppoint(storeId: 1, start: "2017-01-01 00:00", end: "2017-12-15 00:00"))
+            .request(.CustomerAppoint(customerId: 2, start: "2017-01-01 00:00", end: "2017-12-15 00:00"))
             .subscribe { (event) in
                 self.stopLoadingView()
                 switch event {

@@ -115,7 +115,7 @@ extension MonthViewController: MonthPresenterViewProtocol {
         setupRightBtn()
 
 
-        epollAppointments()
+//        epollAppointments()
         
         let now = DateInRegion() 
         let startDate = (now - 18.days).absoluteDate
@@ -135,52 +135,52 @@ extension MonthViewController: MonthPresenterViewProtocol {
 //        checkAppointDates(dateSeg: dates.monthDates)
     }
 
-    func epollAppointments(){
-            MDApp
-                .api
-                .request(.StoreAppointByStatus(storeId: 1, status:"pending",start: "2017-01-01 00:00", end: "2017-12-15 00:00"))
-                .subscribe { (event) in
-                        switch event {
-                        case let .next(response):
-        //                    print("-------------------------------------------------------------------------")
-        //                    print(JSON(data:response.data))
-                            let json = JSON(data:response.data)
-
-                            var count = 0
-//                            print(JSON(data:response.data))
-                            self.appointList  = (json.dictionaryValue["data"]?.arrayValue.map({ (j:JSON) -> AppointmentOpt in
-                                var r = AppointmentOpt()
-                                r.start_at = j["start_at"].stringValue
-                                r.end_at = j["end_at"].stringValue
-                                r.status = j["status"].stringValue
-                                r.description = j["description"].stringValue
-                                r.pet_name = j["pet_name"].stringValue
-                                r.customer_thumbnail = j["customer_thumbnail"].stringValue
-                                r.pet_id =  j["pet_id"].intValue
-                                r.pet_thumbnail = j["pet_thumbnail"].stringValue
-                                
-                                // count badge
-                                if r.status == "pending" {
-                                   count += 1
-                                }
-                                return r
-                            }))!
-
-                            self.setAppointBadge(n: count )
-                            break
-                        case let .error(error):
-                            print(error)
-                        default:
-                            break
-                        }
-                    // test : what happend if timeout
-                            self.epollTimer.invalidate()
-                            self.epollTimer = Timer.after(self.epollApointTime.seconds) {
-//                                print("call")
-                                self.epollAppointments()
-                            } // Timer
-                 }.addDisposableTo(dbg)
-    } // fin epoll
+//    func epollAppointments(){
+//            MDApp
+//                .api
+//                .request(.StoreAppointByStatus(storeId: 1, status:"pending",start: "2017-01-01 00:00", end: "2017-12-15 00:00"))
+//                .subscribe { (event) in
+//                        switch event {
+//                        case let .next(response):
+//        //                    print("-------------------------------------------------------------------------")
+//        //                    print(JSON(data:response.data))
+//                            let json = JSON(data:response.data)
+//
+//                            var count = 0
+////                            print(JSON(data:response.data))
+//                            self.appointList  = (json.dictionaryValue["data"]?.arrayValue.map({ (j:JSON) -> AppointmentOpt in
+//                                var r = AppointmentOpt()
+//                                r.start_at = j["start_at"].stringValue
+//                                r.end_at = j["end_at"].stringValue
+//                                r.status = j["status"].stringValue
+//                                r.description = j["description"].stringValue
+//                                r.pet_name = j["pet_name"].stringValue
+//                                r.customer_thumbnail = j["customer_thumbnail"].stringValue
+//                                r.pet_id =  j["pet_id"].intValue
+//                                r.pet_thumbnail = j["pet_thumbnail"].stringValue
+//                                
+//                                // count badge
+//                                if r.status == "pending" {
+//                                   count += 1
+//                                }
+//                                return r
+//                            }))!
+//
+//                            self.setAppointBadge(n: count )
+//                            break
+//                        case let .error(error):
+//                            print(error)
+//                        default:
+//                            break
+//                        }
+//                    // test : what happend if timeout
+//                            self.epollTimer.invalidate()
+//                            self.epollTimer = Timer.after(self.epollApointTime.seconds) {
+////                                print("call")
+//                                self.epollAppointments()
+//                            } // Timer
+//                 }.addDisposableTo(dbg)
+//    } // fin epoll
     
     
     func showAppointDailyVC(date:String){
@@ -216,12 +216,12 @@ extension MonthViewController {
         //        b.addSubview(badge)
         //        let play = UIBarButtonItem(title: "Play", style: .plain, target: self, action: nil)
 //        let appoint = UIBarButtonItem(title: "預約", style: .plain, target: self, action: nil)
-        appointmentsBtn.setTitle("預約", for: .normal)
-        appointmentsBtn.setTitleColor(.white, for: .normal)
-        appointmentsBtn.setTitleColor(.black, for: .highlighted)
-        appointmentsBtn.addTarget(self, action: #selector(appointBtnHandle), for: .touchUpInside)
+//        appointmentsBtn.setTitle("預約", for: .normal)
+//        appointmentsBtn.setTitleColor(.white, for: .normal)
+//        appointmentsBtn.setTitleColor(.black, for: .highlighted)
+//        appointmentsBtn.addTarget(self, action: #selector(appointBtnHandle), for: .touchUpInside)
         
-        let appoint = UIBarButtonItem(customView: appointmentsBtn)
+//        let appoint = UIBarButtonItem(customView: appointmentsBtn)
 //        appoint.target = self
 //        appoint.action = #selector(self.appointBtnHandle)
         
@@ -231,7 +231,7 @@ extension MonthViewController {
         //        navigationItem.rightBarButtonItem = rightButton
         
         //        navigationItem.rightBarButtonItems = [rightButton,rightButton2]
-        navigationItem.rightBarButtonItems = [record,appoint]
+        navigationItem.rightBarButtonItems = [record]
     }
     
     
@@ -432,6 +432,7 @@ extension MonthViewController : JTAppleCalendarViewDataSource, JTAppleCalendarVi
             .api
             .request(.CustomerAppoint(customerId:2, start:beginStr,end:endStr))
             .subscribe { (event) in
+                self.stopLoadingView()
                 switch event {
                 case let .next(response):
                     print("-------------------------------------------------------------------------")
@@ -491,15 +492,10 @@ extension MonthViewController : JTAppleCalendarViewDataSource, JTAppleCalendarVi
 
     // didSelect
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
-//        let date1 = try! DateInRegion(string: "1999-12-31 23:30:00", format: .custom("yyyy-MM-dd HH:mm:ss"), fromRegion: regionRome)
-        let date = try! DateInRegion(absoluteDate: date)
-        let str = date.string(format: .custom("yyyy-MM-dd"))
-
-        print("didSelectDate\(date) \(str)")
-//        handleCellSelection(view: cell, cellState: cellState)
-//        handleCellTextColor(view: cell, cellState: cellState)
-        // todo to check if enable appointment
-        self.showAppointDailyVC(date: str)
+//        let date = try! DateInRegion(absoluteDate: date)
+//        let str = date.string(format: .custom("yyyy-MM-dd"))
+//        print("didSelectDate\(date) \(str)")
+//        self.showAppointDailyVC(date: str)
     }
     
     // did deselect data
