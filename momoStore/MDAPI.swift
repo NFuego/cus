@@ -11,11 +11,10 @@
 import Foundation
 import Moya
 import Result
-import Alamofire
+//import Alamofire
 import SwiftDate
 
 protocol Dict {
-    
     func asDict()->Dictionary<String,Any>
 }
 
@@ -89,39 +88,6 @@ public enum DayOfWeek: String {
 }
 
 
-struct JsonArrayEncoding: Moya.ParameterEncoding {
-    public static var `default`: JsonArrayEncoding { return JsonArrayEncoding() }
-    /// Creates a URL request by encoding parameters and applying them onto an existing request.
-    ///
-    /// - parameter urlRequest: The request to have parameters applied.
-    /// - parameter parameters: The parameters to apply.
-    ///
-    /// - throws: An `AFError.parameterEncodingFailed` error if encoding fails.
-    ///
-    /// - returns: The encoded request.
-    public func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
-        var req = try urlRequest.asURLRequest()
-        let json = try JSONSerialization.data(withJSONObject: parameters!["jsonArray"]!, options: .prettyPrinted)
-//        req.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-//        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        req.setValue("application/json", forHTTPHeaderField: "Accept")
-        req.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-//        Content-Type: application/json
-//        print(try? JSONSerialization.jsonObject(with: json, options: .allowFragments))
-        req.httpBody = json
-
-//        let jsonString = (parameters!["jsonArray"] as! String)
-//        let jsonString = "'[{start:09:00:00,end:12:30:00}]'"
-//                         "'[{\"start\":\"09:00:00\",\"end\":\"12:00:00\"}]'"
-//        print(jsonString)
-//        print(req.httpMethod)
-//        print(req.url)
-//        print(req.allHTTPHeaderFields)
-//        req.httpBody = jsonString.data(using: .utf8)
-//        req.httpBody = parameters!["jsonArray"] as! Data?
-        return req
-    }
-}
 
 
 public enum MDAppURI {
@@ -152,6 +118,19 @@ public enum MDAPI {
     case DenyAppoint(appointId:Int)
     case NewAppoint(storeId:Int,customerId:Int,petId:Int, start:String,end:String,descri:String)
 
+    case NewPet(name:String, age:String, variety_id:Int, zhVar:String, engVar:String, bloodType:String, weight:String, chip:Bool, descri:String)
+    /*
+    {
+    "status": "OK",
+    "status_code": 200,
+    "data": {
+    "id": 85
+    }
+    }
+ */
+//    case UploadPetImg(id:String,img:UIImage)
+
+    
     // get
     case StoreSchedule(storeId:Int)
     case StoreScheduleAt(storeId:Int, date:DateInRegion)
@@ -164,6 +143,10 @@ public enum MDAPI {
     
     // Store
     case GetStores()
+
+    // Pet
+    case GetPets()
+
 }
 
 extension MDAPI : TargetType {
@@ -187,13 +170,11 @@ extension MDAPI : TargetType {
             case .Auth:
                 return "/user/login"
             
-    
+            // customer
+            case .ShowCustomer(let customerId):
+                return "/customer/\(customerId)/edit"
 
-        // customer
-        case .ShowCustomer(let customerId):
-            return "/customer/\(customerId)/edit"
-
-        // Schedules
+            // Schedules
             case .NewSchedule(let weekday, _):
                 print("/schedule-rule/\(weekday.description)")
                 return "/schedule-rule/\(weekday.description)"
@@ -203,36 +184,43 @@ extension MDAPI : TargetType {
                 let date = fullDate(date: date)
                 return "/schedule/\(storeId)/\(date)"
 
-            // Appointments
-        case .CustomerAppoint(let customerId,let start,let end):
-                return "/customer/\(customerId)/appointments"
-        case .StoreAppoint(let storeId,let start,let end):
-                return "/store/\(storeId)/appointments"
-        case .StoreAppointByStatus(let storeId,let status,_,_):
-            return "/store/\(storeId)/appointments/\(status)"
-        case .NewAppoint(let storeId ,let customerId,let petId ,let start ,let end ,let descri ):
-            return  "/appointment"
-        case .AcceptAppoint(let id):
-            return "/appointment/\(id)/accept"
-        case .DenyAppoint(let id):
-            return "/appointment/\(id)/deny"
-            
+
+                // Appointments
+            case .CustomerAppoint(let customerId,let start,let end):
+                    return "/customer/\(customerId)/appointments"
+            case .StoreAppoint(let storeId,let start,let end):
+                    return "/store/\(storeId)/appointments"
+            case .StoreAppointByStatus(let storeId,let status,_,_):
+                return "/store/\(storeId)/appointments/\(status)"
+            case .NewAppoint(let storeId ,let customerId,let petId ,let start ,let end ,let descri ):
+                return  "/appointment"
+            case .AcceptAppoint(let id):
+                return "/appointment/\(id)/accept"
+            case .DenyAppoint(let id):
+                return "/appointment/\(id)/deny"
+
+
             // store
             case .GetStores():
-            return  "/store"
+                return  "/store"
+
+            // pets
+            case .GetPets() :
+                return "/pet"
+            case .NewPet(let name,let age,let variety_id,let zhVar,let engVar,let bloodType, let weight,let chip,let descri):
+                return "/pet"
+//            case .UploadPetImg(let id, _):
+//                return "/pet/\(id)/avatar"
         }
-        
 
-
-        
     }
-    
+
 
     public var method: Moya.Method {
         switch self {
-        case .Auth , .NewSchedule , .NewAppoint, .AcceptAppoint, .DenyAppoint:
+        case .Auth , .NewSchedule , .NewAppoint, .AcceptAppoint, .DenyAppoint,.NewPet: //, .UploadPetImg:
                 return .post
-        case .StoreSchedule , .StoreScheduleAt, .CustomerAppoint, .StoreAppoint, .ShowCustomer,.StoreAppointByStatus,.GetStores():
+        case .StoreSchedule , .StoreScheduleAt, .CustomerAppoint, .StoreAppoint, .ShowCustomer,.StoreAppointByStatus,.GetStores() , .GetPets():
             return .get
         }
     }
@@ -278,17 +266,39 @@ extension MDAPI : TargetType {
                 return [:]
             case let .DenyAppoint(appointId):
                 return [:]
-        case let .StoreAppointByStatus(storeId, status,start,end):
-            let dic = [ "store_id" : storeId , "status" : status, "start_time":start, "end_time":end] as [String : Any]
-            return dic
-            // Customer
-        case let .ShowCustomer(customerId):
-            let dic = ["id":customerId]
-            return dic
             
-        case let .GetStores():
-            return [:]
+            case let .StoreAppointByStatus(storeId, status,start,end):
+                let dic = [ "store_id" : storeId , "status" : status, "start_time":start, "end_time":end] as [String : Any]
+                return dic
+                // Customer
+            case let .ShowCustomer(customerId):
+                let dic = ["id":customerId]
+                return dic
+                
+            case .GetStores():
+                return [:]
+
+            case .GetPets():
+                return [:]
             
+            case .NewPet(let name,let age,let variety_id,let zhVar,let engVar,let bloodType, let weight,let chip,let descri):
+                let dic = ["name":name,
+                           "age":age,
+                           "variety_id":variety_id.description,
+                           "zh_variety":zhVar,
+                           "en_variety":engVar,
+                           "blood_type":bloodType,
+                           "weight":weight,
+                           "chip":chip.description,
+                           "descri":descri
+                           ] 
+                return dic
+
+//        case .UploadPetImg(_, let img):
+//            guard let data = UIImageJPEGRepresentation(img, 1.0) else { return nil }
+//            let pa = [MultipartFormData(provider: .data(data), name: "", fileName: "torename.jpg", mimeType:"image/jpeg")]
+//            let dic = ["pet_avatar":pa]
+//            return dic
 //            default :
 //                return ["":""]
         } // fin switch
@@ -297,6 +307,30 @@ extension MDAPI : TargetType {
     public  var sampleData: Data {
         return Data()
     }
+    
+//    var multipartBody: [MultipartFormData]? {
+//        switch self {
+//        case .UploadPetImg(_, let img):
+//            guard let data = UIImageJPEGRepresentation(img, 1.0) else { return nil }
+//            return [MultipartFormData(provider: .data(data), name: "files", fileName: "torename.jpg", mimeType:"image/jpeg")]
+//        default:
+//            return nil
+//        }
+//    }
+
+    
+//    var multipartBody: [MultipartFormData]? {
+//        switch self {
+//        case .UploadPetImg(_, let img):
+//            let imageData = UIImageJPEGRepresentation(img, 1.0)
+//            let formData: [MultipartFormData] = [MultipartFormData(provider: .data(imageData!), name: "image", fileName: "photo.jpg", mimeType: "image/jpeg")]
+//            return formData
+//
+//
+//        default:
+//            return []
+//        }
+//    }
 
     public var task: Moya.Task {
 //        switch self {

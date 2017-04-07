@@ -1,12 +1,3 @@
-//
-//  ContactsViewController.swift
-//  Project: momoCustomer
-//
-//  Module: Contacts
-//
-//  By ssstand 2017/3/12
-//  MomoDidi 2017年
-//
 
 // MARK: Imports
 
@@ -14,6 +5,7 @@ import UIKit
 
 import SwiftyVIPER
 
+import SnapKit
 
 // MARK: Protocols
 
@@ -37,11 +29,15 @@ class ContactsViewController: UIViewController {
 	let presenter: ContactsViewPresenterProtocol
 
 	// MARK: Variables
+    let contactShowView = ContactViewModule().view
+    var cp:EPContactsPicker!
 
 	// MARK: Inits
 
 	init(presenter: ContactsViewPresenterProtocol) {
 		self.presenter = presenter
+//        contactsNav = UINavigationController(rootViewController: cp)
+        
 		super.init(nibName: nil, bundle: nil)
 	}
 
@@ -58,15 +54,55 @@ class ContactsViewController: UIViewController {
 
         self.title = "聯絡人"
 		view.backgroundColor = .white
+        setup()
+        
     }
+}
+
+// MARK: - UI helper
+extension ContactsViewController {
+    func setup(){
+       self.edgesForExtendedLayout = []
+       self.extendedLayoutIncludesOpaqueBars = true
+       self.navigationController?.toolbar.barStyle = .default // this make it appears
+        
+       self.navigationController?.navigationBar.barStyle = .blackOpaque
+       self.navigationController?.navigationBar.isTranslucent = false
+       self.navigationController?.navigationBar.barTintColor = UIColor(hex: "FF4081")
+       self.navigationController?.navigationBar.tintColor = .white
+
+       self.cp = EPContactsPicker(delegate: self, multiSelection:false, subtitleCellType: SubtitleCellValue.phoneNumber)
+       self.view.addSubview(cp.view)
+    }
+    
 }
 
 
 // MARK: - Contacts Presenter to View Protocol
 
 extension ContactsViewController: ContactsPresenterViewProtocol {
-
 	func set(title: String?) {
 		self.title = title
 	}
+}
+
+extension ContactsViewController: EPPickerDelegate {
+    func epContactPicker(_: EPContactsPicker, didContactFetchFailed error : NSError) {
+
+    }
+    
+    func epContactPicker(_: EPContactsPicker, didCancel error : NSError){
+
+    }
+    
+    func epContactPicker(_: EPContactsPicker, didSelectContact contact : EPContact){
+        print(contact.displayName())
+        debugPrint(contact)
+        contactShowView.contactInfo = contact
+        self.navigationController?.pushViewController(contactShowView, animated: true)
+    }
+
+    func epContactPicker(_: EPContactsPicker, didSelectMultipleContacts contacts : [EPContact]){
+
+    }
 }

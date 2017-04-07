@@ -4,8 +4,6 @@
 //
 //  Module: AppointmetFormer
 //
-//  By zcon 2017/3/9
-//  test 2017年
 //
 
 // MARK: Imports

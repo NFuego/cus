@@ -60,7 +60,7 @@ class AppointmentCreateFormViewController: FormViewController {
 //        petId = MDApp.appointment.petInfo.id
        
         self.form.setValues([
-            kPET_IMAGE: Picture(url: MDAppURI.imgURL + "TODO"),
+            kPET_IMAGE: Picture(url: MDAppURI.imgURL + "TODO", img:nil),
             kPET_NAME : "",
             kSTART_TIME : startAt,
             kEND_TIME : endAt,

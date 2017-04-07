@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28CBD888B92629AC51A7148A /* Pods_momoStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 052DC915707F80507ADEC4A2 /* Pods_momoStore.framework */; };
 		4B095D551E265E4500D1CBD5 /* MonthCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B095D541E265E4500D1CBD5 /* MonthCellView.swift */; };
 		4B432EF51E08A97F0049B3C6 /* MemberProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B432EF01E08A97F0049B3C6 /* MemberProfileInteractor.swift */; };
 		4B432EF61E08A97F0049B3C6 /* MemberProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B432EF01E08A97F0049B3C6 /* MemberProfileInteractor.swift */; };
@@ -209,9 +208,10 @@
 		4BFD439F1E75296D00DEF11F /* AppointStoreMonthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFD439A1E75296D00DEF11F /* AppointStoreMonthPresenter.swift */; };
 		4BFD43A01E75296D00DEF11F /* AppointStoreMonthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFD439B1E75296D00DEF11F /* AppointStoreMonthRouter.swift */; };
 		4BFD43A11E75296D00DEF11F /* AppointStoreMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFD439C1E75296D00DEF11F /* AppointStoreMonthViewController.swift */; };
-		59C0606B2249A23B7CEEDA23 /* Pods_momoStoreUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1AE6272C4D258B35957D61 /* Pods_momoStoreUITests.framework */; };
-		69B907A0FC8637462F178EB0 /* Pods_momoStoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4876029F6FC91D30091D430 /* Pods_momoStoreTests.framework */; };
+		4F65A4C73123C1A5ED9BE0E6 /* Pods_momoCustomer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C42C23EDFCCDA3218CC8D3E /* Pods_momoCustomer.framework */; };
 		E71E62111E4C1C5F002E8741 /* JsonFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E62101E4C1C5F002E8741 /* JsonFormats.swift */; };
+		E732CFC51E96395900008BE1 /* ServiceStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732CFC41E96395900008BE1 /* ServiceStruct.swift */; };
+		E732CFC71E963D2100008BE1 /* ImgUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732CFC61E963D2100008BE1 /* ImgUploader.swift */; };
 		E73598D51E70F8C900677703 /* AppoinmentsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73598D01E70F8C900677703 /* AppoinmentsListInteractor.swift */; };
 		E73598D61E70F8C900677703 /* AppoinmentsListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73598D11E70F8C900677703 /* AppoinmentsListModule.swift */; };
 		E73598D71E70F8C900677703 /* AppoinmentsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73598D21E70F8C900677703 /* AppoinmentsListPresenter.swift */; };
@@ -225,6 +225,28 @@
 		E789939D1E7292AA0011BA71 /* AppointmetFormerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78993981E7292AA0011BA71 /* AppointmetFormerViewController.swift */; };
 		E78993A31E72960F0011BA71 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E78993A51E72960F0011BA71 /* Localizable.strings */; };
 		E79602F71E6FCCAA00D28F97 /* SwipeActImgvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79602F61E6FCCAA00D28F97 /* SwipeActImgvView.swift */; };
+		E7A00FD11E972CB800EC33A6 /* MemoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FCC1E972CB800EC33A6 /* MemoInteractor.swift */; };
+		E7A00FD21E972CB800EC33A6 /* MemoModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FCD1E972CB800EC33A6 /* MemoModule.swift */; };
+		E7A00FD31E972CB800EC33A6 /* MemoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FCE1E972CB800EC33A6 /* MemoPresenter.swift */; };
+		E7A00FD41E972CB800EC33A6 /* MemoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FCF1E972CB800EC33A6 /* MemoRouter.swift */; };
+		E7A00FD51E972CB800EC33A6 /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FD01E972CB800EC33A6 /* MemoViewController.swift */; };
+		E7A00FDC1E972DDF00EC33A6 /* EPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FD61E972DDF00EC33A6 /* EPConstants.swift */; };
+		E7A00FDD1E972DDF00EC33A6 /* EPContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FD71E972DDF00EC33A6 /* EPContact.swift */; };
+		E7A00FDE1E972DDF00EC33A6 /* EPContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FD81E972DDF00EC33A6 /* EPContactCell.swift */; };
+		E7A00FDF1E972DDF00EC33A6 /* EPContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A00FD91E972DDF00EC33A6 /* EPContactCell.xib */; };
+		E7A00FE01E972DDF00EC33A6 /* EPContactsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FDA1E972DDF00EC33A6 /* EPContactsPicker.swift */; };
+		E7A00FE11E972DDF00EC33A6 /* EPExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FDB1E972DDF00EC33A6 /* EPExtensions.swift */; };
+		E7A00FEA1E97314900EC33A6 /* MemoAddFormInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FE51E97314900EC33A6 /* MemoAddFormInteractor.swift */; };
+		E7A00FEB1E97314900EC33A6 /* MemoAddFormModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FE61E97314900EC33A6 /* MemoAddFormModule.swift */; };
+		E7A00FEC1E97314900EC33A6 /* MemoAddFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FE71E97314900EC33A6 /* MemoAddFormPresenter.swift */; };
+		E7A00FED1E97314900EC33A6 /* MemoAddFormRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FE81E97314900EC33A6 /* MemoAddFormRouter.swift */; };
+		E7A00FEE1E97314900EC33A6 /* MemoAddFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FE91E97314900EC33A6 /* MemoAddFormViewController.swift */; };
+		E7A00FF61E97343000EC33A6 /* ContactViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FF01E97343000EC33A6 /* ContactViewInteractor.swift */; };
+		E7A00FF71E97343000EC33A6 /* ContactViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FF11E97343000EC33A6 /* ContactViewModule.swift */; };
+		E7A00FF81E97343000EC33A6 /* ContactViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FF21E97343000EC33A6 /* ContactViewPresenter.swift */; };
+		E7A00FF91E97343000EC33A6 /* ContactViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FF31E97343000EC33A6 /* ContactViewRouter.swift */; };
+		E7A00FFA1E97343000EC33A6 /* ContactViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FF41E97343000EC33A6 /* ContactViewViewController.swift */; };
+		E7A00FFB1E97343000EC33A6 /* ImgRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FF51E97343000EC33A6 /* ImgRow.swift */; };
 		E7B9012E1E49B2B200EE59D9 /* ScheduleVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9012D1E49B2B200EE59D9 /* ScheduleVO.swift */; };
 		E7B9012F1E49B5B000EE59D9 /* MDAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B68792D1E397189008EA4C9 /* MDAPI.swift */; };
 		E7B901301E49B5B100EE59D9 /* MDAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B68792D1E397189008EA4C9 /* MDAPI.swift */; };
@@ -264,7 +286,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		052DC915707F80507ADEC4A2 /* Pods_momoStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_momoStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B095D541E265E4500D1CBD5 /* MonthCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthCellView.swift; sourceTree = "<group>"; };
 		4B432EF01E08A97F0049B3C6 /* MemberProfileInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberProfileInteractor.swift; sourceTree = "<group>"; };
 		4B432EF11E08A97F0049B3C6 /* MemberProfileModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberProfileModule.swift; sourceTree = "<group>"; };
@@ -384,12 +405,11 @@
 		4BFD439A1E75296D00DEF11F /* AppointStoreMonthPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointStoreMonthPresenter.swift; sourceTree = "<group>"; };
 		4BFD439B1E75296D00DEF11F /* AppointStoreMonthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointStoreMonthRouter.swift; sourceTree = "<group>"; };
 		4BFD439C1E75296D00DEF11F /* AppointStoreMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointStoreMonthViewController.swift; sourceTree = "<group>"; };
-		631EC9FFF03FAF6C17EE7BA8 /* Pods-momoStoreUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momoStoreUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-momoStoreUITests/Pods-momoStoreUITests.release.xcconfig"; sourceTree = "<group>"; };
-		847D7BA29F64BAEC7F622233 /* Pods-momoStoreUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momoStoreUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-momoStoreUITests/Pods-momoStoreUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		B5AA40EAF982CC27A18863D7 /* Pods-momoStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momoStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-momoStore/Pods-momoStore.release.xcconfig"; sourceTree = "<group>"; };
-		D8D925B35826CC908D5D2A26 /* Pods-momoStoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momoStoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-momoStoreTests/Pods-momoStoreTests.release.xcconfig"; sourceTree = "<group>"; };
-		E6FF63C2D631B06F08442242 /* Pods-momoStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momoStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-momoStore/Pods-momoStore.debug.xcconfig"; sourceTree = "<group>"; };
+		7F63B598597BD693F2201D52 /* Pods-momoCustomer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momoCustomer.release.xcconfig"; path = "Pods/Target Support Files/Pods-momoCustomer/Pods-momoCustomer.release.xcconfig"; sourceTree = "<group>"; };
+		8C42C23EDFCCDA3218CC8D3E /* Pods_momoCustomer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_momoCustomer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71E62101E4C1C5F002E8741 /* JsonFormats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonFormats.swift; sourceTree = "<group>"; };
+		E732CFC41E96395900008BE1 /* ServiceStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceStruct.swift; sourceTree = "<group>"; };
+		E732CFC61E963D2100008BE1 /* ImgUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgUploader.swift; sourceTree = "<group>"; };
 		E73598D01E70F8C900677703 /* AppoinmentsListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppoinmentsListInteractor.swift; sourceTree = "<group>"; };
 		E73598D11E70F8C900677703 /* AppoinmentsListModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppoinmentsListModule.swift; sourceTree = "<group>"; };
 		E73598D21E70F8C900677703 /* AppoinmentsListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppoinmentsListPresenter.swift; sourceTree = "<group>"; };
@@ -407,13 +427,33 @@
 		E78993A61E7296100011BA71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E78993A71E7296110011BA71 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E79602F61E6FCCAA00D28F97 /* SwipeActImgvView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeActImgvView.swift; sourceTree = "<group>"; };
+		E7A00FCC1E972CB800EC33A6 /* MemoInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoInteractor.swift; sourceTree = "<group>"; };
+		E7A00FCD1E972CB800EC33A6 /* MemoModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoModule.swift; sourceTree = "<group>"; };
+		E7A00FCE1E972CB800EC33A6 /* MemoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoPresenter.swift; sourceTree = "<group>"; };
+		E7A00FCF1E972CB800EC33A6 /* MemoRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoRouter.swift; sourceTree = "<group>"; };
+		E7A00FD01E972CB800EC33A6 /* MemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
+		E7A00FD61E972DDF00EC33A6 /* EPConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPConstants.swift; sourceTree = "<group>"; };
+		E7A00FD71E972DDF00EC33A6 /* EPContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPContact.swift; sourceTree = "<group>"; };
+		E7A00FD81E972DDF00EC33A6 /* EPContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPContactCell.swift; sourceTree = "<group>"; };
+		E7A00FD91E972DDF00EC33A6 /* EPContactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPContactCell.xib; sourceTree = "<group>"; };
+		E7A00FDA1E972DDF00EC33A6 /* EPContactsPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPContactsPicker.swift; sourceTree = "<group>"; };
+		E7A00FDB1E972DDF00EC33A6 /* EPExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPExtensions.swift; sourceTree = "<group>"; };
+		E7A00FE51E97314900EC33A6 /* MemoAddFormInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoAddFormInteractor.swift; sourceTree = "<group>"; };
+		E7A00FE61E97314900EC33A6 /* MemoAddFormModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoAddFormModule.swift; sourceTree = "<group>"; };
+		E7A00FE71E97314900EC33A6 /* MemoAddFormPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoAddFormPresenter.swift; sourceTree = "<group>"; };
+		E7A00FE81E97314900EC33A6 /* MemoAddFormRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoAddFormRouter.swift; sourceTree = "<group>"; };
+		E7A00FE91E97314900EC33A6 /* MemoAddFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoAddFormViewController.swift; sourceTree = "<group>"; };
+		E7A00FF01E97343000EC33A6 /* ContactViewInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewInteractor.swift; sourceTree = "<group>"; };
+		E7A00FF11E97343000EC33A6 /* ContactViewModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewModule.swift; sourceTree = "<group>"; };
+		E7A00FF21E97343000EC33A6 /* ContactViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewPresenter.swift; sourceTree = "<group>"; };
+		E7A00FF31E97343000EC33A6 /* ContactViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewRouter.swift; sourceTree = "<group>"; };
+		E7A00FF41E97343000EC33A6 /* ContactViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewViewController.swift; sourceTree = "<group>"; };
+		E7A00FF51E97343000EC33A6 /* ImgRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgRow.swift; sourceTree = "<group>"; };
 		E7B9012D1E49B2B200EE59D9 /* ScheduleVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleVO.swift; sourceTree = "<group>"; };
 		E7C4BBD81E1636F1001B2C77 /* ScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleVC.swift; sourceTree = "<group>"; };
 		E7DA27191E448A3C00606798 /* GlobalUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalUI.swift; sourceTree = "<group>"; };
 		E7DA271C1E448BB500606798 /* MDService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDService.swift; sourceTree = "<group>"; };
-		EC1AE6272C4D258B35957D61 /* Pods_momoStoreUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_momoStoreUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4876029F6FC91D30091D430 /* Pods_momoStoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_momoStoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F536384AB5099434182E9A10 /* Pods-momoStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momoStoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-momoStoreTests/Pods-momoStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EF257533739745A539ED6BB3 /* Pods-momoCustomer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momoCustomer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-momoCustomer/Pods-momoCustomer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -421,7 +461,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28CBD888B92629AC51A7148A /* Pods_momoStore.framework in Frameworks */,
+				4F65A4C73123C1A5ED9BE0E6 /* Pods_momoCustomer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,7 +469,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69B907A0FC8637462F178EB0 /* Pods_momoStoreTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,36 +476,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59C0606B2249A23B7CEEDA23 /* Pods_momoStoreUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1CFA769836C74F32A925D6D2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E6FF63C2D631B06F08442242 /* Pods-momoStore.debug.xcconfig */,
-				B5AA40EAF982CC27A18863D7 /* Pods-momoStore.release.xcconfig */,
-				F536384AB5099434182E9A10 /* Pods-momoStoreTests.debug.xcconfig */,
-				D8D925B35826CC908D5D2A26 /* Pods-momoStoreTests.release.xcconfig */,
-				847D7BA29F64BAEC7F622233 /* Pods-momoStoreUITests.debug.xcconfig */,
-				631EC9FFF03FAF6C17EE7BA8 /* Pods-momoStoreUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		3F319E46BFB54E343FA81E30 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				052DC915707F80507ADEC4A2 /* Pods_momoStore.framework */,
-				F4876029F6FC91D30091D430 /* Pods_momoStoreTests.framework */,
-				EC1AE6272C4D258B35957D61 /* Pods_momoStoreUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		4B432EEF1E08A95D0049B3C6 /* memProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -578,6 +593,9 @@
 		4B5323DE1E153FFE00EF41D8 /* vc */ = {
 			isa = PBXGroup;
 			children = (
+				E7A00FEF1E97342000EC33A6 /* contactShow */,
+				E7A00FE41E97313B00EC33A6 /* memoAddForm */,
+				E7A00FCB1E972CA900EC33A6 /* memoList */,
 				4B769D701E74BD1300AECD3B /* appointmentCreateForm */,
 				E78993931E7292620011BA71 /* appointmentConfirm */,
 				4B4B4DFB1E703F6700E33E2F /* recordList */,
@@ -603,6 +621,8 @@
 				4B68792D1E397189008EA4C9 /* MDAPI.swift */,
 				4B68792E1E397189008EA4C9 /* MDConfig.swift */,
 				E7DA271C1E448BB500606798 /* MDService.swift */,
+				E732CFC41E96395900008BE1 /* ServiceStruct.swift */,
+				E732CFC61E963D2100008BE1 /* ImgUploader.swift */,
 			);
 			name = services;
 			sourceTree = "<group>";
@@ -630,8 +650,8 @@
 				4B70DEB41E0760E2000D9D5A /* momoStoreTests */,
 				4B70DEBF1E0760E2000D9D5A /* momoStoreUITests */,
 				4B70DE9E1E0760E2000D9D5A /* Products */,
-				1CFA769836C74F32A925D6D2 /* Pods */,
-				3F319E46BFB54E343FA81E30 /* Frameworks */,
+				9FDAA4B5EDB80F56F0CC3970 /* Pods */,
+				A0805B7E74A54C99F5168722 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -648,6 +668,7 @@
 		4B70DE9F1E0760E2000D9D5A /* momoStore */ = {
 			isa = PBXGroup;
 			children = (
+				E7A00FE31E972DF600EC33A6 /* vendor */,
 				E79602F51E6FCC8F00D28F97 /* view */,
 				E7DA271B1E448A4200606798 /* enhancement */,
 				4B6879361E3A332F008EA4C9 /* ext */,
@@ -849,6 +870,23 @@
 			name = storeMain;
 			sourceTree = "<group>";
 		};
+		9FDAA4B5EDB80F56F0CC3970 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF257533739745A539ED6BB3 /* Pods-momoCustomer.debug.xcconfig */,
+				7F63B598597BD693F2201D52 /* Pods-momoCustomer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A0805B7E74A54C99F5168722 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C42C23EDFCCDA3218CC8D3E /* Pods_momoCustomer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E77C32741E15F7A5009340A9 /* rsc */ = {
 			isa = PBXGroup;
 			children = (
@@ -898,6 +936,64 @@
 			name = view;
 			sourceTree = "<group>";
 		};
+		E7A00FCB1E972CA900EC33A6 /* memoList */ = {
+			isa = PBXGroup;
+			children = (
+				E7A00FCC1E972CB800EC33A6 /* MemoInteractor.swift */,
+				E7A00FCD1E972CB800EC33A6 /* MemoModule.swift */,
+				E7A00FCE1E972CB800EC33A6 /* MemoPresenter.swift */,
+				E7A00FCF1E972CB800EC33A6 /* MemoRouter.swift */,
+				E7A00FD01E972CB800EC33A6 /* MemoViewController.swift */,
+			);
+			name = memoList;
+			sourceTree = "<group>";
+		};
+		E7A00FE21E972DE200EC33A6 /* epcontacts */ = {
+			isa = PBXGroup;
+			children = (
+				E7A00FD61E972DDF00EC33A6 /* EPConstants.swift */,
+				E7A00FD71E972DDF00EC33A6 /* EPContact.swift */,
+				E7A00FD81E972DDF00EC33A6 /* EPContactCell.swift */,
+				E7A00FD91E972DDF00EC33A6 /* EPContactCell.xib */,
+				E7A00FDA1E972DDF00EC33A6 /* EPContactsPicker.swift */,
+				E7A00FDB1E972DDF00EC33A6 /* EPExtensions.swift */,
+			);
+			name = epcontacts;
+			sourceTree = "<group>";
+		};
+		E7A00FE31E972DF600EC33A6 /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				E7A00FE21E972DE200EC33A6 /* epcontacts */,
+			);
+			name = vendor;
+			sourceTree = "<group>";
+		};
+		E7A00FE41E97313B00EC33A6 /* memoAddForm */ = {
+			isa = PBXGroup;
+			children = (
+				E7A00FE51E97314900EC33A6 /* MemoAddFormInteractor.swift */,
+				E7A00FE61E97314900EC33A6 /* MemoAddFormModule.swift */,
+				E7A00FE71E97314900EC33A6 /* MemoAddFormPresenter.swift */,
+				E7A00FE81E97314900EC33A6 /* MemoAddFormRouter.swift */,
+				E7A00FE91E97314900EC33A6 /* MemoAddFormViewController.swift */,
+			);
+			name = memoAddForm;
+			sourceTree = "<group>";
+		};
+		E7A00FEF1E97342000EC33A6 /* contactShow */ = {
+			isa = PBXGroup;
+			children = (
+				E7A00FF01E97343000EC33A6 /* ContactViewInteractor.swift */,
+				E7A00FF11E97343000EC33A6 /* ContactViewModule.swift */,
+				E7A00FF21E97343000EC33A6 /* ContactViewPresenter.swift */,
+				E7A00FF31E97343000EC33A6 /* ContactViewRouter.swift */,
+				E7A00FF41E97343000EC33A6 /* ContactViewViewController.swift */,
+				E7A00FF51E97343000EC33A6 /* ImgRow.swift */,
+			);
+			name = contactShow;
+			sourceTree = "<group>";
+		};
 		E7B9012C1E49B29600EE59D9 /* VO */ = {
 			isa = PBXGroup;
 			children = (
@@ -923,12 +1019,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B70DEC51E0760E2000D9D5A /* Build configuration list for PBXNativeTarget "momoCustomer" */;
 			buildPhases = (
-				223E2F9663ADD9ADEFA3FEC7 /* [CP] Check Pods Manifest.lock */,
+				33CE9889B92E0D6C23BA2C98 /* [CP] Check Pods Manifest.lock */,
 				4B70DE991E0760E2000D9D5A /* Sources */,
 				4B70DE9A1E0760E2000D9D5A /* Frameworks */,
 				4B70DE9B1E0760E2000D9D5A /* Resources */,
-				2D6CB3276A9AA29EDD65A826 /* [CP] Embed Pods Frameworks */,
-				17133B7274900DD2BD81FFAA /* [CP] Copy Pods Resources */,
+				21077203507C88FFCA4850E3 /* [CP] Embed Pods Frameworks */,
+				5A469581F5261AE300C13902 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -943,12 +1039,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B70DEC81E0760E2000D9D5A /* Build configuration list for PBXNativeTarget "momoCustomerTests" */;
 			buildPhases = (
-				BCB80449A2A2E130CC98BE01 /* [CP] Check Pods Manifest.lock */,
 				4B70DEAD1E0760E2000D9D5A /* Sources */,
 				4B70DEAE1E0760E2000D9D5A /* Frameworks */,
 				4B70DEAF1E0760E2000D9D5A /* Resources */,
-				016B2D4B242B67C5EBAFC3F8 /* [CP] Embed Pods Frameworks */,
-				B7A357A3B3FAEAB9C4A54FB1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -964,12 +1057,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B70DECB1E0760E2000D9D5A /* Build configuration list for PBXNativeTarget "momoCustomerUITests" */;
 			buildPhases = (
-				E31ED3E75B2CBB68A68821B1 /* [CP] Check Pods Manifest.lock */,
 				4B70DEB81E0760E2000D9D5A /* Sources */,
 				4B70DEB91E0760E2000D9D5A /* Frameworks */,
 				4B70DEBA1E0760E2000D9D5A /* Resources */,
-				8B565058692F83FB87B66316 /* [CP] Embed Pods Frameworks */,
-				6E73DDDE80E37A9B7539D04A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -993,7 +1083,7 @@
 				TargetAttributes = {
 					4B70DE9C1E0760E2000D9D5A = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 4M3T5B2VJJ;
+						DevelopmentTeam = M43ZXET4L5;
 						ProvisioningStyle = Automatic;
 					};
 					4B70DEB01E0760E2000D9D5A = {
@@ -1039,6 +1129,7 @@
 				4B70DEAB1E0760E2000D9D5A /* LaunchScreen.storyboard in Resources */,
 				E78993A31E72960F0011BA71 /* Localizable.strings in Resources */,
 				4B70DEA81E0760E2000D9D5A /* Assets.xcassets in Resources */,
+				E7A00FDF1E972DDF00EC33A6 /* EPContactCell.xib in Resources */,
 				4B70DEA61E0760E2000D9D5A /* Main.storyboard in Resources */,
 				E77C327B1E15F83D009340A9 /* Icons.xcassets in Resources */,
 				4B7370061E0B131F002EF1F6 /* profile.png in Resources */,
@@ -1062,7 +1153,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		016B2D4B242B67C5EBAFC3F8 /* [CP] Embed Pods Frameworks */ = {
+		21077203507C88FFCA4850E3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1074,25 +1165,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-momoStoreTests/Pods-momoStoreTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-momoCustomer/Pods-momoCustomer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		17133B7274900DD2BD81FFAA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-momoStore/Pods-momoStore-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		223E2F9663ADD9ADEFA3FEC7 /* [CP] Check Pods Manifest.lock */ = {
+		33CE9889B92E0D6C23BA2C98 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1107,22 +1183,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		2D6CB3276A9AA29EDD65A826 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-momoStore/Pods-momoStore-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6E73DDDE80E37A9B7539D04A /* [CP] Copy Pods Resources */ = {
+		5A469581F5261AE300C13902 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1134,67 +1195,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-momoStoreUITests/Pods-momoStoreUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8B565058692F83FB87B66316 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-momoStoreUITests/Pods-momoStoreUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B7A357A3B3FAEAB9C4A54FB1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-momoStoreTests/Pods-momoStoreTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BCB80449A2A2E130CC98BE01 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E31ED3E75B2CBB68A68821B1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-momoCustomer/Pods-momoCustomer-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1205,11 +1206,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B769D5F1E73EFCE00AECD3B /* AppointMemberListInteractor.swift in Sources */,
+				E7A00FED1E97314900EC33A6 /* MemoAddFormRouter.swift in Sources */,
 				4BCA7E091E086C7800C42763 /* WeekViewController.swift in Sources */,
+				E7A00FD41E972CB800EC33A6 /* MemoRouter.swift in Sources */,
 				4B769D6A1E73F58500AECD3B /* AppointProfileModule.swift in Sources */,
+				E7A00FEB1E97314900EC33A6 /* MemoAddFormModule.swift in Sources */,
+				E7A00FD21E972CB800EC33A6 /* MemoModule.swift in Sources */,
 				E789939B1E7292AA0011BA71 /* AppointmetFormerPresenter.swift in Sources */,
 				4BFD439E1E75296D00DEF11F /* AppointStoreMonthModule.swift in Sources */,
 				E71E62111E4C1C5F002E8741 /* JsonFormats.swift in Sources */,
+				E7A00FFB1E97343000EC33A6 /* ImgRow.swift in Sources */,
 				4B769D6F1E743C1F00AECD3B /* ToucheableImgView.swift in Sources */,
 				4BCA7DD61E0869B300C42763 /* RootPresenter.swift in Sources */,
 				4B769D631E73EFCE00AECD3B /* AppointMemberListViewController.swift in Sources */,
@@ -1217,11 +1223,14 @@
 				4B769DB31E75177D00AECD3B /* CustomerDayViewController.swift in Sources */,
 				4B5323DB1E15355800EF41D8 /* OpenTimeViewController.swift in Sources */,
 				4BCA7E111E086C8A00C42763 /* DayInteractor.swift in Sources */,
+				E7A00FEC1E97314900EC33A6 /* MemoAddFormPresenter.swift in Sources */,
 				4BCA7E141E086C8A00C42763 /* DayModule.swift in Sources */,
 				4BCA7DFD1E086C7800C42763 /* WeekInteractor.swift in Sources */,
 				4B769DA41E75135100AECD3B /* PlanInteractor.swift in Sources */,
+				E7A00FDE1E972DDF00EC33A6 /* EPContactCell.swift in Sources */,
 				4BCA7E001E086C7800C42763 /* WeekModule.swift in Sources */,
 				4B769D971E7512F800AECD3B /* ContactsInteractor.swift in Sources */,
+				E7A00FD11E972CB800EC33A6 /* MemoInteractor.swift in Sources */,
 				4BCA7E171E086C8A00C42763 /* DayPresenter.swift in Sources */,
 				4B769D601E73EFCE00AECD3B /* AppointMemberListModule.swift in Sources */,
 				4BF70C651E56D75700535490 /* DayScheduleTimeCell.swift in Sources */,
@@ -1234,14 +1243,19 @@
 				E789939D1E7292AA0011BA71 /* AppointmetFormerViewController.swift in Sources */,
 				4B769D991E7512F800AECD3B /* ContactsPresenter.swift in Sources */,
 				4B769DA71E75135100AECD3B /* PlanRouter.swift in Sources */,
+				E7A00FDC1E972DDF00EC33A6 /* EPConstants.swift in Sources */,
 				4BFD439D1E75296D00DEF11F /* AppointStoreMonthInteractor.swift in Sources */,
 				4BCA7E451E086CA100C42763 /* ConfigViewController.swift in Sources */,
 				4BCA7E251E086C9500C42763 /* MemberInteractor.swift in Sources */,
 				4BCA7E281E086C9500C42763 /* MemberModule.swift in Sources */,
 				4BE3B04E1E70CD180003F048 /* RecordList.swift in Sources */,
+				E7A00FDD1E972DDF00EC33A6 /* EPContact.swift in Sources */,
+				E732CFC71E963D2100008BE1 /* ImgUploader.swift in Sources */,
 				4BFD43A01E75296D00DEF11F /* AppointStoreMonthRouter.swift in Sources */,
 				4B769D9A1E7512F800AECD3B /* ContactsRouter.swift in Sources */,
+				E7A00FF71E97343000EC33A6 /* ContactViewModule.swift in Sources */,
 				4B5323D51E15355800EF41D8 /* OpenTimePresenter.swift in Sources */,
+				E7A00FFA1E97343000EC33A6 /* ContactViewViewController.swift in Sources */,
 				E79602F71E6FCCAA00D28F97 /* SwipeActImgvView.swift in Sources */,
 				E73598D81E70F8C900677703 /* AppoinmentsListRouter.swift in Sources */,
 				4B769D901E74CD1900AECD3B /* AppointmentDayViewController.swift in Sources */,
@@ -1249,10 +1263,14 @@
 				4B6879341E397189008EA4C9 /* MDConfig.swift in Sources */,
 				4BCA7DF21E086C6600C42763 /* MonthRouter.swift in Sources */,
 				E73598D61E70F8C900677703 /* AppoinmentsListModule.swift in Sources */,
+				E7A00FF61E97343000EC33A6 /* ContactViewInteractor.swift in Sources */,
+				E7A00FEA1E97314900EC33A6 /* MemoAddFormInteractor.swift in Sources */,
 				4BFD43931E75251300DEF11F /* StoreMainInteractor.swift in Sources */,
 				4BCA7E2B1E086C9500C42763 /* MemberPresenter.swift in Sources */,
 				4B6879321E397189008EA4C9 /* DevKit.swift in Sources */,
 				4B4B4E001E703FDD00E33E2F /* MenuOptCell.swift in Sources */,
+				E7A00FEE1E97314900EC33A6 /* MemoAddFormViewController.swift in Sources */,
+				E7A00FD31E972CB800EC33A6 /* MemoPresenter.swift in Sources */,
 				4BFD439F1E75296D00DEF11F /* AppointStoreMonthPresenter.swift in Sources */,
 				E7C4BBD91E1636F1001B2C77 /* ScheduleVC.swift in Sources */,
 				4B432EF81E08A97F0049B3C6 /* MemberProfileModule.swift in Sources */,
@@ -1261,6 +1279,7 @@
 				4B769D8D1E74CD1900AECD3B /* AppointmentDayModule.swift in Sources */,
 				4B5323D21E15355800EF41D8 /* OpenTimeModule.swift in Sources */,
 				E73598D71E70F8C900677703 /* AppoinmentsListPresenter.swift in Sources */,
+				E7A00FD51E972CB800EC33A6 /* MemoViewController.swift in Sources */,
 				4B4B4DFD1E703F7000E33E2F /* OptsVC.swift in Sources */,
 				4B769DB21E75177D00AECD3B /* CustomerDayRouter.swift in Sources */,
 				4B769D771E74BD4700AECD3B /* AppointmentCreateFormModule.swift in Sources */,
@@ -1278,8 +1297,10 @@
 				E7B9012E1E49B2B200EE59D9 /* ScheduleVO.swift in Sources */,
 				4B769DB01E75177D00AECD3B /* CustomerDayModule.swift in Sources */,
 				4B769DB11E75177D00AECD3B /* CustomerDayPresenter.swift in Sources */,
+				E7A00FF91E97343000EC33A6 /* ContactViewRouter.swift in Sources */,
 				4BCA7E3F1E086CA100C42763 /* ConfigPresenter.swift in Sources */,
 				4BFD43961E75251300DEF11F /* StoreMainRouter.swift in Sources */,
+				E732CFC51E96395900008BE1 /* ServiceStruct.swift in Sources */,
 				4B769D761E74BD4700AECD3B /* AppointmentCreateFormInteractor.swift in Sources */,
 				4BCA7E1A1E086C8A00C42763 /* DayRouter.swift in Sources */,
 				E789939A1E7292AA0011BA71 /* AppointmetFormerModule.swift in Sources */,
@@ -1287,6 +1308,7 @@
 				4B5323E21E15400800EF41D8 /* ScheduleTimeView.swift in Sources */,
 				4B769D7A1E74BD4700AECD3B /* AppointmentCreateFormViewController.swift in Sources */,
 				4BCA7E1D1E086C8A00C42763 /* DayViewController.swift in Sources */,
+				E7A00FF81E97343000EC33A6 /* ContactViewPresenter.swift in Sources */,
 				4B769D6C1E73F58500AECD3B /* AppointProfileRouter.swift in Sources */,
 				4BFD43971E75251300DEF11F /* StoreMainViewController.swift in Sources */,
 				4BCA7E311E086C9500C42763 /* MemberViewController.swift in Sources */,
@@ -1297,6 +1319,7 @@
 				4BCA7E061E086C7800C42763 /* WeekRouter.swift in Sources */,
 				4B769D9B1E7512F800AECD3B /* ContactsViewController.swift in Sources */,
 				4BCA7E031E086C7800C42763 /* WeekPresenter.swift in Sources */,
+				E7A00FE01E972DDF00EC33A6 /* EPContactsPicker.swift in Sources */,
 				4B769D8E1E74CD1900AECD3B /* AppointmentDayPresenter.swift in Sources */,
 				4B5323E81E15400800EF41D8 /* ScheduleView.swift in Sources */,
 				4B4B4DF61E70396500E33E2F /* AppApreance.swift in Sources */,
@@ -1308,6 +1331,7 @@
 				4B4B4DF81E703C8800E33E2F /* NaviBarBtn.swift in Sources */,
 				4B6879301E397189008EA4C9 /* CellHeader.swift in Sources */,
 				4B769DA81E75135100AECD3B /* PlanViewController.swift in Sources */,
+				E7A00FE11E972DDF00EC33A6 /* EPExtensions.swift in Sources */,
 				E73598D51E70F8C900677703 /* AppoinmentsListInteractor.swift in Sources */,
 				E7DA271D1E448BB500606798 /* MDService.swift in Sources */,
 				4BCA7E3C1E086CA100C42763 /* ConfigModule.swift in Sources */,
@@ -1595,12 +1619,12 @@
 		};
 		4B70DEC61E0760E2000D9D5A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6FF63C2D631B06F08442242 /* Pods-momoStore.debug.xcconfig */;
+			baseConfigurationReference = EF257533739745A539ED6BB3 /* Pods-momoCustomer.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4M3T5B2VJJ;
+				DEVELOPMENT_TEAM = M43ZXET4L5;
 				INFOPLIST_FILE = momoStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1613,13 +1637,13 @@
 		};
 		4B70DEC71E0760E2000D9D5A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5AA40EAF982CC27A18863D7 /* Pods-momoStore.release.xcconfig */;
+			baseConfigurationReference = 7F63B598597BD693F2201D52 /* Pods-momoCustomer.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4M3T5B2VJJ;
+				DEVELOPMENT_TEAM = M43ZXET4L5;
 				INFOPLIST_FILE = momoStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1632,7 +1656,6 @@
 		};
 		4B70DEC91E0760E2000D9D5A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F536384AB5099434182E9A10 /* Pods-momoStoreTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1649,7 +1672,6 @@
 		};
 		4B70DECA1E0760E2000D9D5A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8D925B35826CC908D5D2A26 /* Pods-momoStoreTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1666,7 +1688,6 @@
 		};
 		4B70DECC1E0760E2000D9D5A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 847D7BA29F64BAEC7F622233 /* Pods-momoStoreUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 4M3T5B2VJJ;
@@ -1682,7 +1703,6 @@
 		};
 		4B70DECD1E0760E2000D9D5A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 631EC9FFF03FAF6C17EE7BA8 /* Pods-momoStoreUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 4M3T5B2VJJ;

@@ -1,11 +1,8 @@
-//
 //  Store:
-///
 //
 // Encapsulate api call to MDStoreService Store, MDCustomerService
 // and parse it objects
-// 
-// 
+//
 //
 // Config Open Time 
 //
@@ -36,10 +33,48 @@
 //
 //
 //
+
+/* 
+ 
+ ================== Store: ====================
+ accounting: user page, initial config page
+ 
+ Point card: 
+ 
+ schedule time view
+ ================== Customer : ====================
+ contact list , show   - 9 ~ 11:25
+ 
+ memo list,
+
+ pet list , 
+     show, 
+     add ,
+     edit
+ 
+ 
+ 商家首次使用：
+
+ 設定營業項目價位
+ 會員重置時間（新的會員卡） ：
+ 延展會員卡時間：
+ always推播
+
+
+ 警示/凍結：
+ 系統寄送推播通知
+ 推播通知不檔時間
+
+ 任意通知：
+ 推播前確定：早上八點到晚上十點
+ 
+ 
+ */
+
 /*
  
  checklist :
- 
+
  Store :
  1. what happend when i accept an appointment in the appointmentList while the customer
     has canceled it before.
@@ -191,7 +226,6 @@ extension AppDelegate {
     
     
     func quickTest(){
-
         let current =  DateInRegion().string(format: .iso8601(options: [.withFullDate]))
         let current2 =  DateInRegion().string(format: .iso8601(options: [.withYear,.withMonth,.withDay]))
 //          MDApp
@@ -210,6 +244,10 @@ extension AppDelegate {
 //        }
         print(current) // 1
         print(current2) // 1
+
+//        Img.uploadPetPhoto(petId: 85.description, img: UIImage(named: "profile.png")!)
+
+
 
 //        let schedule = Schedule(times: [
 //                TimePeriod(start:"09:00:00",end:"11:00:00"),
