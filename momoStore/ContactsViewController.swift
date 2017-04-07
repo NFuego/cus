@@ -114,9 +114,9 @@ extension ContactsViewController {
     }
 
     func memoBtnHandle(){
-       self.navigationController?.present(memoNav, animated: true)
+//       self.navigationController?.present(memoNav, animated: true)
+        self.navigationController?.pushViewController(MemoModule().view, animated: true)
     }
-
 }
 
 
@@ -141,8 +141,7 @@ extension ContactsViewController: EPPickerDelegate {
 //        print(contact.displayName())
 //        debugPrint(contact)
         contactShowView.contactInfo = contact
-//        self.navigationController?.pushViewController(contactShowView, animated: true)
-        self.navigationController?.pushViewController(MemoModule().view, animated: true)
+        self.navigationController?.pushViewController(contactShowView, animated: true)
     }
 
     func epContactPicker(_: EPContactsPicker, didSelectMultipleContacts contacts : [EPContact]){

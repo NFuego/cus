@@ -40,14 +40,18 @@
  accounting: user page, initial config page
  
  Point card: 
- 
  schedule time view
  ================== Customer : ====================
+
  contact list , show   - 9 ~ 11:25
 
- memo list,
-      show -> time , done , edit / delete ?
-      new 
+ memo list, 
+      show    
+          local notify ,
+          done            
+          edit
+          delete ?
+      new
 
  pet list ,
      show, 
@@ -428,7 +432,7 @@ extension AppDelegate {
     }
 }
 
-// MARK:- global loading view
+// MARK:- global loading view , ui
 extension AppDelegate {
     func setupGlobalLoadingView() {
         actiIndView = UIActivityIndicatorView(activityIndicatorStyle: .gray)

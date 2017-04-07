@@ -1,10 +1,9 @@
 
-
 // MARK: Imports
-
 import UIKit
 import Eureka
 import SwiftyVIPER
+import SwiftyJSON
 
 let kLocalNotify = "localMemoNotify"
 // MARK: Protocols
@@ -21,7 +20,7 @@ protocol MemoAddFormPresenterViewProtocol: class {
 // MARK: -
 
 /// The View Controller for the MemoAddForm module
-class MemoAddFormViewController: FormViewController {
+class MemoAddFormViewController: FormViewController, GlobalUI, GlobalAlert {
 
 	// MARK: - Constants
 
@@ -41,13 +40,16 @@ class MemoAddFormViewController: FormViewController {
 	}
 
 	// MARK: - Load Functions
-
 	override func viewDidLoad() {
     	super.viewDidLoad()
 		presenter.viewLoaded()
         self.preSet()
 		view.backgroundColor = .white
         self.setupForm()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
 }
 
@@ -62,10 +64,11 @@ extension MemoAddFormViewController: MemoAddFormPresenterViewProtocol {
 
 extension MemoAddFormViewController {
     func preSet(){
+        
         self.navigationController?.navigationBar.barStyle = .blackOpaque
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = UIColor.white
-        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.barTintColor = UIColor.barCr
+        self.navigationController?.navigationBar.tintColor = .white
         self.title = "新增行事曆"
         let back = UIBarButtonItem(title: "返回", style: .plain, target: self, action: #selector(self.back))
         self.navigationItem.leftBarButtonItem = back
@@ -83,7 +86,7 @@ extension MemoAddFormViewController {
             form +++ Section(header: header!, footer: "")          
                 // ========================================================================== loaded zone
                 <<< TextAreaRow() { (l:TextAreaRow) -> Void in
-                    l.tag = ""
+                    l.tag = "descri"
                     l.placeholder = "輸入行事曆"
                     l.title = NSLocalizedString("", comment: "")
 
@@ -99,12 +102,50 @@ extension MemoAddFormViewController {
                         return !((form.rowBy(tag: kLocalNotify) as? SwitchRow)?.value ?? false)
                     })
                     $0.title = "提醒時間:"
-                    
                 }
                 <<< ButtonRow() { (b:ButtonRow) -> Void in
                     b.title = "確認新增"
                 } .onCellSelection({ (cell, row) in
-                    self.navigationController?.popViewController(animated: true)
+
+                    self.playLoadingView()
+                    let data = self.form.values()
+                    guard let descri = data["descri"] as? String else {
+                        self.stopLoadingView()
+                       self.globalAlert(msg: "請填寫事項內容")
+                       return
+                    }
+
+                    let now = "2017/04/07"
+
+                //    case NewMemo(user_id:Int, datetime:String,descri:String)
+                    
+                    // TODO , with true value
+                    MDApp
+                        .api
+                        .request(.NewMemo(user_id:2,datetime:now,descri:descri))
+                        .subscribe { (event) in
+                            switch event {
+                            case let .next(response):
+                                DispatchQueue.global(qos: .userInitiated).async {
+                                    DispatchQueue.main.async {
+                                        self.stopLoadingView()
+                                        self.navigationController?.popViewController(animated: true)
+                                    }
+                                }
+                                print("-------------------------------------------------------------------------")
+                                print(JSON(data:response.data))
+                            case let .error(error):
+                                print(error)
+                                // TODO appear error
+                                DispatchQueue.global(qos: .userInitiated).async {
+                                    DispatchQueue.main.async {
+                                        self.stopLoadingView()
+                                    }
+                                }
+                            default:
+                                break
+                            }
+                    }
                 })
                 /*
                 <<< ButtonRow() { (b:ButtonRow) -> Void in
@@ -114,7 +155,6 @@ extension MemoAddFormViewController {
 
                     })
                 })
-        
         form.setValues([kEND_TIME:"te",kNAME:"nnnnn"])
  */
 

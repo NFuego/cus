@@ -66,7 +66,6 @@ class AppointmentCreateFormViewController: FormViewController {
             kEND_TIME : endAt,
             kDESCRIPTION : ""
             ])
-    
     }
 
 	override func viewDidLoad() {

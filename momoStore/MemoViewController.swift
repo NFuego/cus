@@ -33,10 +33,12 @@ import SnapKit
 
 import RxSwift
 import RxCocoa
+import SwiftyJSON
 
 struct MemoItem {
-    let createdAt:String
-    let detail:String
+    var createdAt:String?
+    var detail:String?
+    var id:Int?
     // todo : local schedule
 }
 
@@ -65,7 +67,7 @@ class MemoItemCell : UITableViewCell {
             self.itemName.snp.makeConstraints { (make) in
                 make.centerY.equalToSuperview()
                 make.leading.equalToSuperview().offset(5)
-                make.width.equalTo(100)
+                make.width.equalTo(120)
                 make.height.equalTo(50)
             }
 
@@ -97,7 +99,7 @@ protocol MemoPresenterViewProtocol: class {
 // MARK: -
 
 /// The View Controller for the Memo module
-class MemoViewController: UIViewController {
+class MemoViewController: UIViewController, GlobalUI {
 
 	// MARK: - Constants
 
@@ -107,12 +109,8 @@ class MemoViewController: UIViewController {
     let memoAddForm = MemoAddFormModule().view
     let memoCellId = "memoCellId"
     var list:UITableView!
-    var memoItems = [MemoItem(createdAt: "2017/03/20", detail:"Todo todo and todo.."),
-                 MemoItem(createdAt: "2017/03/20", detail:"Todo todo and todo.."),
-                 MemoItem(createdAt: "2017/03/20", detail:"Todo todo and todo.."),
-                 MemoItem(createdAt: "2017/03/20", detail:"Todo todo and todo.."),
-                 MemoItem(createdAt: "2017/03/20", detail:"Todo todo and todo.."),
-                 MemoItem(createdAt: "2017/03/20", detail:"Todo todo and todo..")]
+    let dbg = DisposeBag()
+    var memoItems = [MemoItem]()
 
 	// MARK: Inits
 	init(presenter: MemoViewPresenterProtocol) {
@@ -164,6 +162,54 @@ class MemoViewController: UIViewController {
             make.size.equalToSuperview()
         }
     }
+
+
+    override func viewWillAppear(_ animated: Bool) {
+        self.playLoadingView()
+        MDApp
+            .api
+            .request(.ListMemos(id: 2, start:"2017-01-01 00:00" , end: "2017-12-15 00:00")) // TODO true val
+            .subscribe { (event) in
+                switch event {
+                case let .next(response):
+//                    print("-------------------------------------------------------------------------")
+//                    print(JSON(data:response.data))
+//                    {
+//                        "data": [
+//                        {
+//                        "id": 4,
+//                        "datetime": "2017-04-07 00:00:00",
+//                        "description": "gg"
+//                        }
+
+//                        ],
+                    let json = JSON(data:response.data)
+                    self.memoItems = (json.dictionaryValue["data"]?.arrayValue.map({ (j:JSON) -> MemoItem in
+                        var r = MemoItem(createdAt: "", detail: "", id: 0)
+                        r.id = j["id"].intValue
+                        r.createdAt = j["datetime"].stringValue
+                        r.detail = j["description"].stringValue
+                        return r
+                    }))!
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        DispatchQueue.main.async {
+                            self.stopLoadingView()
+                            self.list.reloadData()
+                        }
+                    }
+
+                    break
+                case let .error(error):
+                    print(error)
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        DispatchQueue.main.async {
+                            self.stopLoadingView()
+                        }
+                    }
+                default:
+                    break
+                }}.addDisposableTo(dbg)
+    }
 }
 
 // MARK: - helper
@@ -191,14 +237,13 @@ extension MemoViewController : UITableViewDataSource {
         return cell
     }
 
-    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memoItems.count
     }
 
-
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-       return true
+        // operation should do in single view
+       return false
     }
 }
 

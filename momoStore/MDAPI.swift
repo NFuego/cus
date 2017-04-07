@@ -87,9 +87,6 @@ public enum DayOfWeek: String {
 //    }
 }
 
-
-
-
 public enum MDAppURI {
     public static var baseURL : String {
         switch MDApp.config.appMode {
@@ -117,7 +114,6 @@ public enum MDAPI {
     case AcceptAppoint(appointId:Int)
     case DenyAppoint(appointId:Int)
     case NewAppoint(storeId:Int,customerId:Int,petId:Int, start:String,end:String,descri:String)
-
     case NewPet(name:String, age:String, variety_id:Int, zhVar:String, engVar:String, bloodType:String, weight:String, chip:Bool, descri:String)
     /*
     {
@@ -129,9 +125,10 @@ public enum MDAPI {
     }
  */
 //    case UploadPetImg(id:String,img:UIImage)
-
+    case NewMemo(user_id:Int, datetime:String,descri:String)
+    case DelMemo()
     
-    // get
+    // ======================= get ==========================
     case StoreSchedule(storeId:Int)
     case StoreScheduleAt(storeId:Int, date:DateInRegion)
     case StoreAppoint(storeId:Int, start:String,end:String)
@@ -139,13 +136,17 @@ public enum MDAPI {
 
     case StoreAppointByStatus(storeId:Int,status:String,start:String,end:String)
     case ShowCustomer(customerId:Int)
-    
-    
+
+    case ListMemos(id:Int,start:String,end:String)
     // Store
     case GetStores()
 
     // Pet
     case GetPets()
+
+    // Item
+    case ListItems()
+
 
 }
 
@@ -199,7 +200,6 @@ extension MDAPI : TargetType {
             case .DenyAppoint(let id):
                 return "/appointment/\(id)/deny"
 
-
             // store
             case .GetStores():
                 return  "/store"
@@ -211,17 +211,35 @@ extension MDAPI : TargetType {
                 return "/pet"
 //            case .UploadPetImg(let id, _):
 //                return "/pet/\(id)/avatar"
-        }
+
+            // Memos
+            case .NewMemo(_,_,_):
+                return "/time-calendar"
+            case .ListMemos(let id, _, _):
+                return "/user/\(id)/time-calendar"
+
+            case .DelMemo(let id):
+                return "/time-calendar/\(id)"
+            
+            // accounting items
+            case .ListItems():
+                return "/item"
+            }
 
     }
 
 
     public var method: Moya.Method {
         switch self {
-        case .Auth , .NewSchedule , .NewAppoint, .AcceptAppoint, .DenyAppoint,.NewPet: //, .UploadPetImg:
+        case .Auth , .NewSchedule , .NewAppoint, .AcceptAppoint, .DenyAppoint,.NewPet,.NewMemo: //, .UploadPetImg:
                 return .post
-        case .StoreSchedule , .StoreScheduleAt, .CustomerAppoint, .StoreAppoint, .ShowCustomer,.StoreAppointByStatus,.GetStores() , .GetPets():
+        case .StoreSchedule , .StoreScheduleAt,
+             .CustomerAppoint, .StoreAppoint,
+             .ShowCustomer,.StoreAppointByStatus,
+             .GetStores() , .GetPets(),.ListMemos, .ListItems():
             return .get
+        case .DelMemo :
+            return .delete
         }
     }
 
@@ -294,7 +312,27 @@ extension MDAPI : TargetType {
                            ] 
                 return dic
 
+            // Memo
+            case .NewMemo(let user_id,let datetime,let descri):
+                let dic = ["user_id":user_id.description,
+                           "datetime":datetime,
+                           "description":descri]
+                return dic
+
+            case .ListMemos(let id,let start,let end):
+                let dic = ["id":id.description,
+                           "start_date":start,
+                           "end_date":end]
+                return dic
+            case .DelMemo():
+                return [:]
+
+            // Items
+            case .ListItems():
+                return [:]
+
 //        case .UploadPetImg(_, let img):
+            
 //            guard let data = UIImageJPEGRepresentation(img, 1.0) else { return nil }
 //            let pa = [MultipartFormData(provider: .data(data), name: "", fileName: "torename.jpg", mimeType:"image/jpeg")]
 //            let dic = ["pet_avatar":pa]
