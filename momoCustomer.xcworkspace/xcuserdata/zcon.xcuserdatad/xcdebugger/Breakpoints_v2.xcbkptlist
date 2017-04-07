@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "momoStore/ContactsViewController.swift"
-            timestampString = "513226757.087079"
+            timestampString = "513230184.664406"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "epContactPicker(_:didSelectContact:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "momoStore/ContactsViewController.swift"
-            timestampString = "513227157.081231"
+            timestampString = "513230184.664406"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "epContactPicker(_:didSelectContact:)"
             landmarkType = "7">
          </BreakpointContent>

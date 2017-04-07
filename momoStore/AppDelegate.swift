@@ -44,10 +44,12 @@
  schedule time view
  ================== Customer : ====================
  contact list , show   - 9 ~ 11:25
- 
- memo list,
 
- pet list , 
+ memo list,
+      show -> time , done , edit / delete ?
+      new 
+
+ pet list ,
      show, 
      add ,
      edit

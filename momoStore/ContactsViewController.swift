@@ -32,6 +32,11 @@ class ContactsViewController: UIViewController {
     let contactShowView = ContactViewModule().view
     var cp:EPContactsPicker!
 
+    // right btns
+    var memoBtn = NavBarBtn(frame: CGRect(x: 0, y: 0, width: 60, height: 40))
+    var memoNav:UINavigationController!
+
+
 	// MARK: Inits
 
 	init(presenter: ContactsViewPresenterProtocol) {
@@ -45,9 +50,7 @@ class ContactsViewController: UIViewController {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-
 	// MARK: - Load Functions
-
 	override func viewDidLoad() {
     	super.viewDidLoad()
 		presenter.viewLoaded()
@@ -55,12 +58,45 @@ class ContactsViewController: UIViewController {
         self.title = "聯絡人"
 		view.backgroundColor = .white
         setup()
-        
+        setupRightBtn()
+
     }
 }
 
 // MARK: - UI helper
 extension ContactsViewController {
+    func setupRightBtn(){
+//        b.badgeCount = 1
+        memoBtn.setTitle("行事曆", for: .normal)
+        memoBtn.setTitleColor(.white, for: .normal)
+//        memoBtn.setTitleColor(.black, for: .highlighted)
+        memoBtn.addTarget(self, action: #selector(memoBtnHandle), for: .touchUpInside)
+        
+        let memo = UIBarButtonItem(customView: memoBtn )
+        
+//        record.target = self
+//        record.action = #selector(self.recordBtnHandle)
+        //        b.addSubview(badge)
+        //        let play = UIBarButtonItem(title: "Play", style: .plain, target: self, action: nil)
+//        let appoint = UIBarButtonItem(title: "預約", style: .plain, target: self, action: nil)
+//        appointmentsBtn.setTitle("預約", for: .normal)
+//        appointmentsBtn.setTitleColor(.white, for: .normal)
+//        appointmentsBtn.setTitleColor(.black, for: .highlighted)
+//        appointmentsBtn.addTarget(self, action: #selector(appointBtnHandle), for: .touchUpInside)
+        
+//        let appoint = UIBarButtonItem(customView: appointmentsBtn)
+//        appoint.target = self
+//        appoint.action = #selector(self.appointBtnHandle)
+        
+//        appointmentsBtn.badgeCount = 100
+        
+        //        play.customView?.addSubview(badge)
+        //        navigationItem.rightBarButtonItem = rightButton
+        
+        //        navigationItem.rightBarButtonItems = [rightButton,rightButton2]
+        navigationItem.rightBarButtonItems = [memo]
+    }
+    
     func setup(){
        self.edgesForExtendedLayout = []
        self.extendedLayoutIncludesOpaqueBars = true
@@ -73,8 +109,14 @@ extension ContactsViewController {
 
        self.cp = EPContactsPicker(delegate: self, multiSelection:false, subtitleCellType: SubtitleCellValue.phoneNumber)
        self.view.addSubview(cp.view)
+
+        memoNav = UINavigationController(rootViewController: MemoModule().view)
     }
-    
+
+    func memoBtnHandle(){
+       self.navigationController?.present(memoNav, animated: true)
+    }
+
 }
 
 
@@ -96,10 +138,11 @@ extension ContactsViewController: EPPickerDelegate {
     }
     
     func epContactPicker(_: EPContactsPicker, didSelectContact contact : EPContact){
-        print(contact.displayName())
-        debugPrint(contact)
+//        print(contact.displayName())
+//        debugPrint(contact)
         contactShowView.contactInfo = contact
-        self.navigationController?.pushViewController(contactShowView, animated: true)
+//        self.navigationController?.pushViewController(contactShowView, animated: true)
+        self.navigationController?.pushViewController(MemoModule().view, animated: true)
     }
 
     func epContactPicker(_: EPContactsPicker, didSelectMultipleContacts contacts : [EPContact]){
