@@ -82,6 +82,7 @@ class MemoItemCell : UITableViewCell {
             }
         }
     } // fin model
+    
 
 } // fin MemoItemCell
 
@@ -123,6 +124,22 @@ class MemoViewController: UIViewController, GlobalUI {
 	}
 
 	// MARK: - Load Functions
+    func preSet(){
+//        self.navigationController?.navigationBar.barStyle = .blackOpaque
+//        self.navigationController?.navigationBar.isTranslucent = false
+//        self.navigationController?.navigationBar.barTintColor = UIColor.barCr
+//        self.navigationController?.navigationBar.tintColor = .white
+        self.title = "行事曆"
+        Styler.styleNavBar(self)
+        let back = UIBarButtonItem(title: "返回", style: .plain, target: self, action: #selector(self.back))
+        self.navigationItem.leftBarButtonItem = back
+    }
+
+    func back(){
+        self.dismiss(animated: true) { 
+            
+        }
+    }
 
 
 	override func viewDidLoad() {

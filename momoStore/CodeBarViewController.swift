@@ -68,6 +68,7 @@ class CodeBarViewController: UIViewController {
 	override func viewDidLoad() {
     	super.viewDidLoad()
 		presenter.viewLoaded()
+        self.title = "行動條碼"
         
 
 		view.backgroundColor = .white

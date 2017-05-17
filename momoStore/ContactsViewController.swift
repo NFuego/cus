@@ -25,17 +25,13 @@ protocol ContactsPresenterViewProtocol: class {
 class ContactsViewController: UIViewController {
 
 	// MARK: - Constants
-
 	let presenter: ContactsViewPresenterProtocol
 
 	// MARK: Variables
     let contactShowView = ContactViewModule().view
     var cp:EPContactsPicker!
 
-
-
 	// MARK: Inits
-
 	init(presenter: ContactsViewPresenterProtocol) {
 		self.presenter = presenter
 //        contactsNav = UINavigationController(rootViewController: cp)
@@ -51,13 +47,44 @@ class ContactsViewController: UIViewController {
 	override func viewDidLoad() {
     	super.viewDidLoad()
 		presenter.viewLoaded()
-
         self.title = "聯絡人"
 		view.backgroundColor = .white
         setup()
         setupRightBtn()
-
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+       self.cp = EPContactsPicker(delegate: self, multiSelection:false, subtitleCellType: SubtitleCellValue.phoneNumber)
+       self.cp.automaticallyAdjustsScrollViewInsets = false
+       self.cp.navigationController?.navigationBar.isTranslucent = true
+       self.view.addSubview(cp.view)
+        self.cp.view.snp.makeConstraints { (make) in
+            make.size.equalToSuperview()
+        }
+        
+//        let contactPickerScene = EPContactsPicker(delegate: self, multiSelection:false, subtitleCellType: SubtitleCellValue.phoneNumber)
+//        let navigationController = UINavigationController(rootViewController: contactPickerScene)
+//        self.presentViewController(navigationController, animated: true, completion: nil)
+
+//       (self.cp.view as! UITableView).contentInset = UIEdgeInsetsMake(-64, 0, 0, 0)
+
+//       self.cp.view.edgesfor = UIRectEdge.init(rawValue: 0)
+//        (self.cp.view as! UITableView).automaticallyAdjustsScrollViewInsets = true
+//        self.automaticallyAdjustsScrollViewInsets = false
+    }
+    
+//    func fixTableViewInsets() {
+//        let zContentInsets = UIEdgeInsets.zero
+//        (self.cp.view as! UITableView).contentInset = zContentInsets
+//        (self.cp.view as! UITableView).scrollIndicatorInsets = zContentInsets
+//    }
+//    
+//    override func viewWillLayoutSubviews() {
+//        super.viewWillLayoutSubviews()
+//        fixTableViewInsets()
+//    }
+    
+
 }
 
 // MARK: - UI helper
@@ -95,11 +122,10 @@ extension ContactsViewController {
         
        self.navigationController?.navigationBar.barStyle = .blackOpaque
        self.navigationController?.navigationBar.isTranslucent = false
-       self.navigationController?.navigationBar.barTintColor = UIColor(hex: "FF4081")
+       self.navigationController?.navigationBar.barTintColor = CustomerAppCr.navBar
        self.navigationController?.navigationBar.tintColor = .white
 
-       self.cp = EPContactsPicker(delegate: self, multiSelection:false, subtitleCellType: SubtitleCellValue.phoneNumber)
-       self.view.addSubview(cp.view)
+    
     }
 }
 

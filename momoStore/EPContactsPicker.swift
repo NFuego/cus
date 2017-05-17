@@ -51,6 +51,15 @@ open class EPContactsPicker: UITableViewController, UISearchResultsUpdating, UIS
     
     // MARK: - Lifecycle Methods
     
+    override open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
+    }
+    
+    override open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
+    }
+
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         self.title = EPGlobalConstants.Strings.contactsTitle
@@ -59,6 +68,11 @@ open class EPContactsPicker: UITableViewController, UISearchResultsUpdating, UIS
         inititlizeBarButtons()
         initializeSearchBar()
         reloadContacts()
+        
+//       self.cp.view.edgesfor = UIRectEdge.init(rawValue: 0)
+        
+        
+//        self.automaticallyAdjustsScrollViewInsets = false
     }
     
     func initializeSearchBar() {
@@ -85,12 +99,9 @@ open class EPContactsPicker: UITableViewController, UISearchResultsUpdating, UIS
     }
     
     fileprivate func registerContactCell() {
-        
         let podBundle = Bundle(for: self.classForCoder)
         if let bundleURL = podBundle.url(forResource: EPGlobalConstants.Strings.bundleIdentifier, withExtension: "bundle") {
-            
             if let bundle = Bundle(url: bundleURL) {
-                
                 let cellNib = UINib(nibName: EPGlobalConstants.Strings.cellNibIdentifier, bundle: bundle)
                 tableView.register(cellNib, forCellReuseIdentifier: "Cell")
             }
@@ -111,7 +122,6 @@ open class EPContactsPicker: UITableViewController, UISearchResultsUpdating, UIS
     }
 
     // MARK: - Initializers
-  
     convenience public init(delegate: EPPickerDelegate?) {
         self.init(delegate: delegate, multiSelection: false)
     }

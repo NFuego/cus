@@ -27,6 +27,7 @@ class MonthViewController: UIViewController ,GlobalUI {
     let recordVC = UINavigationController(rootViewController: RecordList())
     let codebarVC = CodeBarModule().view
     let appointVC = AppoinmentsListModule().view
+    let memoVC = MemoModule().view
     var appointList = [AppointmentOpt]()
     let dbg = DisposeBag()
     let dailyVC = AppointmentDayModule().view
@@ -118,7 +119,6 @@ extension MonthViewController: MonthPresenterViewProtocol {
         let startDate = (now - 18.days).absoluteDate
         let endDate =  (now + 18.days).absoluteDate
         checkAppointDates(dateSeg: [startDate,endDate])
-        memoNav = UINavigationController(rootViewController: MemoModule().view)
 	}
     
     override func viewWillAppear(_ animated: Bool) {
@@ -255,7 +255,9 @@ extension MonthViewController {
     func memoBtnHandle(){
 //       self.navigationController?.present(memoNav, animated: true)
 //        self.navigationController?.pushViewController(MemoModule().view, animated: true)
-       self.navigationController?.present(MemoModule().view, animated: true)
+        let navAppointVC = UINavigationController(rootViewController: memoVC)
+        memoVC.preSet()
+       self.navigationController?.present(navAppointVC, animated: true)
     }
     
     func codebarBtnHandle(){
