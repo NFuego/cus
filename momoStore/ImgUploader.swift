@@ -65,7 +65,7 @@ class Img {
     class func uploadPetPhoto(petId:String,img:UIImage) {
        
         // todo
-        let authToken = token
+        let authToken = MDApp.customer.ctoken
         let url = MDAppURI.baseURL + "/pet/\(petId)/avatar"
         print(url)
         

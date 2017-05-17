@@ -12,6 +12,7 @@ PODS:
   - Kingfisher (3.5.1)
   - KingfisherExtension (1.0.1):
     - Kingfisher
+  - ListKit (2.0.0)
   - Moya (8.0.1):
     - Moya/Core (= 8.0.1)
   - Moya/Core (8.0.1):
@@ -57,6 +58,7 @@ DEPENDENCIES:
   - KCFloatingActionButton (~> 2.1.0)
   - Kingfisher
   - KingfisherExtension
+  - ListKit
   - Moya (= 8.0.1)
   - Moya/RxSwift
   - PINCache (from `https://github.com/pinterest/PINCache.git`, commit `58635e4ff8d00fcd25084259a625c0615e9d071a`)
@@ -116,6 +118,7 @@ SPEC CHECKSUMS:
   KCFloatingActionButton: 1b22ce95d44b51915280df8a8b277eae4a06c3f1
   Kingfisher: 12eeffeef42ea45b68c5e5acfe8ba9005b713ab4
   KingfisherExtension: bfb21c0cd08c62fd0c92e5d10c7d098b597fc45b
+  ListKit: 3cc52b46436812398207846bd08e91feaea85042
   Moya: f2e10a04fcb27fec154cb2afa4e536e8b46dac04
   PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
   Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
@@ -135,6 +138,6 @@ SPEC CHECKSUMS:
   Toucan: 47485bbc9cb4541ef6318d6886103e6eaf16e919
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 788eece1a018ac45d9f98dda024f6eed3f48139d
+PODFILE CHECKSUM: 7b53818ccc0c2bdc92eb8dea2d6e7aafa8e1ca62
 
 COCOAPODS: 1.2.1

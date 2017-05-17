@@ -18,8 +18,6 @@ import RxAlamofire
 import SwiftyJSON
 
 
-
-let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6XC9cLzU0LjE0NS4xNjQuNDQ6ODg4OFwvYXBpXC91c2VyXC9sb2dpbiIsImlhdCI6MTQ5MTQ4MjYxOSwiZXhwIjoxNDk5MzcxODM5LCJuYmYiOjE0OTE0ODI2MTksImp0aSI6IjVjZmEyMTlmYzIwOTI2MDA1NjQ3OWVhMDUzNDVjNTRkIn0.9fHjdur30AtfkjQ5iS_bZjBX0tjjiQBUQndBCYqNhtI"
 // MARK: Protocols
 
 /// Should be conformed to by the `MemberInteractor` and referenced by `MemberPresenter`
@@ -67,7 +65,7 @@ class MemberViewController: UIViewController {
     	super.viewDidLoad()
 		presenter.viewLoaded()
         self.setup()
-        _ = json(.get, customerURL , parameters: nil , headers: ["Authorization" : "Bearer {\(token)}"])
+        _ = json(.get, customerURL , parameters: nil , headers: ["Authorization" : "Bearer {\(MDApp.customer.ctoken)}"])
             .observeOn(MainScheduler.instance)
             .subscribe (onNext:{
                  self.members  =  JSON($0)["data"]
@@ -141,7 +139,7 @@ extension MemberViewController : UISearchResultsUpdating {
                 return
         }
         guard let _ = self.searchController else { return }
-        _ = json(.get, customerURL , parameters: ["search_key":searchText] , headers: ["Authorization" : "Bearer {\(token)}"])
+        _ = json(.get, customerURL , parameters: ["search_key":searchText] , headers: ["Authorization" : "Bearer {\(MDApp.customer.ctoken)}"])
             .observeOn(MainScheduler.instance)
             .subscribe (onNext:{
                 self.filteredMembers =  JSON($0)["data"]

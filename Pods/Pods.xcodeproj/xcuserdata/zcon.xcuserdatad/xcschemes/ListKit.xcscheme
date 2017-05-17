@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BEF5A11A602C14B3C38CE73826113C1A'
-               BlueprintName = 'SwiftyUserDefaults'
+               BlueprintIdentifier = '9D7772682F4283B30D74F96630AAAE94'
+               BlueprintName = 'ListKit'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwiftyUserDefaults.framework'>
+               BuildableName = 'ListKit.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

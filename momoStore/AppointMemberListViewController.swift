@@ -71,7 +71,7 @@ class AppointMemberListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
          self.setup()
-        _ = json(.get, customerURL , parameters: nil , headers: ["Authorization" : "Bearer {\(token)}"])
+        _ = json(.get, customerURL , parameters: nil , headers: ["Authorization" : "Bearer {\(MDApp.customer.ctoken)}"])
             .observeOn(MainScheduler.instance)
             .subscribe (onNext:{
                  self.members  =  JSON($0)["data"]
@@ -180,7 +180,7 @@ extension AppointMemberListViewController: UISearchResultsUpdating {
             return
         }
         guard let _ = self.searchController else { return }
-        _ = json(.get, customerURL , parameters: ["search_key":searchText] , headers: ["Authorization" : "Bearer {\(token)}"])
+        _ = json(.get, customerURL , parameters: ["search_key":searchText] , headers: ["Authorization" : "Bearer {\(MDApp.customer.ctoken)}"])
             .observeOn(MainScheduler.instance)
             .subscribe (onNext:{
                 self.filteredMembers =  JSON($0)["data"]

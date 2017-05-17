@@ -39,12 +39,9 @@ public struct StoreOpt {
     var description = ""
 }
 
-//    let stoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cLzU0LjE0NS4xNjQuNDQ6ODg4OFwvYXBpXC91c2VyXC9sb2dpbiIsImlhdCI6MTQ4NTM4NzkxMSwiZXhwIjoxNDkzMjc3MTMxLCJuYmYiOjE0ODUzODc5MTEsImp0aSI6ImJmYmEyMjkwZmZlZTFhZWRmMjRmYTZhZTE2ZDQwMGRlIn0.qXjz2Vxf-07Wpdc-0JCO2eqt2CrfcOeUr2G6cV5Ufcg"
 
-//    let stoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cLzU0LjE0NS4xNjQuNDQ6ODg4OFwvYXBpXC91c2VyXC9sb2dpbiIsImlhdCI6MTQ4ODg3MjUyOCwiZXhwIjoxNDk2NzYxNzQ4LCJuYmYiOjE0ODg4NzI1MjgsImp0aSI6IjFlNjI5ZGYyMzkxNDRiYjdlZGZmZTNmYThkNzczMDI5In0.lxVZUHIc1WizUaJy84fVneHDxeQNFiJO_sWTPYQGXaI"
 
-    let stoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cLzU0LjE0NS4xNjQuNDQ6ODg4OFwvYXBpXC91c2VyXC9sb2dpbiIsImlhdCI6MTQ5MTU0Mzc5MywiZXhwIjoxNDk5NDMzMDEzLCJuYmYiOjE0OTE1NDM3OTMsImp0aSI6IjAyYmNlMGM4MzFmMGExZjU5YWI5NzdhYjY4MWUxNTA3In0.Vt66Bj9cVeAzfbw7E7ITBDvlt7P2cQjziqz64bKPJlo"
-
+        let stoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cLzU0LjE0NS4xNjQuNDQ6ODg4OFwvYXBpXC91c2VyXC9sb2dpbiIsImlhdCI6MTQ5NTAyOTgyNiwiZXhwIjoxNTAyOTE5MDQ2LCJuYmYiOjE0OTUwMjk4MjYsImp0aSI6ImIwMGIyNmExNzcwZjA3YTkwMjU2MGVkZjM2ZDMzMjNkIn0.6NuYv0lUnFKZ3o2z3yXS6WfiIgjAB4b88n0hjvrtXzM"
 
 final class MDApp : NSObject {
     static let api = RxMoyaProvider<MDAPI>(plugins:[AccessTokenPlugin(token:stoken)])
@@ -56,7 +53,8 @@ final class MDApp : NSObject {
     
     struct customer {
         static var mail_account = "ios-customer@gmail.com"
-        static var stoken = ""
+        static var stoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cLzU0LjE0NS4xNjQuNDQ6ODg4OFwvYXBpXC91c2VyXC9sb2dpbiIsImlhdCI6MTQ5NTAyOTgyNiwiZXhwIjoxNTAyOTE5MDQ2LCJuYmYiOjE0OTUwMjk4MjYsImp0aSI6ImIwMGIyNmExNzcwZjA3YTkwMjU2MGVkZjM2ZDMzMjNkIn0.6NuYv0lUnFKZ3o2z3yXS6WfiIgjAB4b88n0hjvrtXzM"
+        static var ctoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6XC9cLzU0LjE0NS4xNjQuNDQ6ODg4OFwvYXBpXC91c2VyXC9sb2dpbiIsImlhdCI6MTQ5NTAyOTc4NywiZXhwIjoxNTAyOTE5MDA3LCJuYmYiOjE0OTUwMjk3ODcsImp0aSI6IjI0MmY4MDg3Y2I1MzQzZDVlYjBlNmI1ZTMzNjU5ZmM1In0.2xdOsoQh4jg6IrxdLCPEPwYDlPRjVKOBTBfpWN6mx9o"
     }
     struct info {
         static var appStartDate = DateInRegion().string(format: .iso8601(options: [.withFullDate]))

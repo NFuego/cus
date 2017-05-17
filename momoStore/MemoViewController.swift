@@ -198,7 +198,6 @@ class MemoViewController: UIViewController, GlobalUI {
 //                        "datetime": "2017-04-07 00:00:00",
 //                        "description": "gg"
 //                        }
-
 //                        ],
                     let json = JSON(data:response.data)
                     self.memoItems = (json.dictionaryValue["data"]?.arrayValue.map({ (j:JSON) -> MemoItem in
