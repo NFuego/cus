@@ -388,7 +388,7 @@ extension PlanViewController: UITableViewDataSource {
         MDApp.store.initVC = nav
         self.navigationController?.present(nav, animated: true, completion: {
         })
-    } // didSelect
+} // didSelect
 }
 
 extension PlanViewController: UITableViewDelegate {

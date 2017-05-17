@@ -4,6 +4,7 @@ import UIKit
 import Eureka
 import SwiftyVIPER
 import SwiftyJSON
+import SwiftDate
 
 let kLocalNotify = "localMemoNotify"
 // MARK: Protocols
@@ -115,14 +116,16 @@ extension MemoAddFormViewController {
                        return
                     }
 
-                    let now = "2017/04/07"
+                    let now = DateInRegion()
+                    let nowStr = now.string(format: .iso8601(options: [.withFullDate]))
+
 
                 //    case NewMemo(user_id:Int, datetime:String,descri:String)
                     
                     // TODO , with true value
                     MDApp
                         .api
-                        .request(.NewMemo(user_id:2,datetime:now,descri:descri))
+                        .request(.NewMemo(user_id:2,datetime:nowStr,descri:descri))
                         .subscribe { (event) in
                             switch event {
                             case let .next(response):
