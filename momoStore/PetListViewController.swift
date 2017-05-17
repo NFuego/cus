@@ -98,6 +98,7 @@ class PetListViewController: UIViewController, GlobalUI {
     
     // MARK: Variables
     var petItems = [PetItemInfo]()
+    let petAddForm = PetAddFormModule().view
 //    let memoAddForm = MemoAddFormModule().view
     let petCellId = "petCellId"
     var list:UITableView!
@@ -141,7 +142,7 @@ class PetListViewController: UIViewController, GlobalUI {
     }
     
     func addPetItem(){
-        
+       self.navigationController?.pushViewController(petAddForm, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -21,6 +21,7 @@ extension UIColor {
         )
     }
 }
+
 fileprivate struct MDThem {
 }
 
@@ -44,8 +45,6 @@ struct CustomerAppCr {
     
     static let navBar = UIColor(hex: "FF4081")
 }
-
-
 
 extension UIColor {
     var toHexString: String {
