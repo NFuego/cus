@@ -24,6 +24,7 @@ PODS:
   - Result (3.1.0)
   - RocketData (4.0.1):
     - ConsistencyManager (~> 4.0.0)
+  - RSBarcodes_Swift (3.0.3)
   - RxAlamofire (3.0.2):
     - RxAlamofire/Core (= 3.0.2)
   - RxAlamofire/Core (3.0.2):
@@ -60,6 +61,7 @@ DEPENDENCIES:
   - Moya/RxSwift
   - PINCache (from `https://github.com/pinterest/PINCache.git`, commit `58635e4ff8d00fcd25084259a625c0615e9d071a`)
   - RocketData
+  - RSBarcodes_Swift (~> 3.0.3)
   - RxAlamofire (from `https://github.com/RxSwiftCommunity/RxAlamofire.git`)
   - RxCocoa (~> 3.0)
   - RxSwift
@@ -118,6 +120,7 @@ SPEC CHECKSUMS:
   PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
   Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
   RocketData: a661f6e75dd8741dbe95856ca84f5e16ab3b377e
+  RSBarcodes_Swift: 3b4a9c2e81fe9f435a26f18a1b8b826665e7cf89
   RxAlamofire: 2f17cab1668dae4e4acecd7af48cf4533af47c43
   RxCocoa: 50d7564866da9299161e86a263ce12a0873904d8
   RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
@@ -132,6 +135,6 @@ SPEC CHECKSUMS:
   Toucan: 47485bbc9cb4541ef6318d6886103e6eaf16e919
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 2f72d623da8df7a5e42d3bacf79d62a086bbbf35
+PODFILE CHECKSUM: 788eece1a018ac45d9f98dda024f6eed3f48139d
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1

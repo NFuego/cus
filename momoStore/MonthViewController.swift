@@ -25,6 +25,7 @@ protocol MonthPresenterViewProtocol: class {
 class MonthViewController: UIViewController ,GlobalUI {
     
     let recordVC = UINavigationController(rootViewController: RecordList())
+    let codebarVC = CodeBarModule().view
     let appointVC = AppoinmentsListModule().view
     var appointList = [AppointmentOpt]()
     let dbg = DisposeBag()
@@ -32,7 +33,6 @@ class MonthViewController: UIViewController ,GlobalUI {
 
     let epollApointTime = Double(5)
     var epollTimer = Timer.every(1.seconds) {}
-    
     
     var calendarView: JTAppleCalendarView!
     let headerHeight = CGFloat(25)
@@ -57,6 +57,10 @@ class MonthViewController: UIViewController ,GlobalUI {
     
     
     var recordBtn = NavBarBtn(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+    var memoBtn = NavBarBtn(frame: CGRect(x: 0, y: 0, width: 60, height: 40))
+    var memoNav:UINavigationController!
+    var codebarBtn = NavBarBtn(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+    
     var appointmentsBtn = NavBarBtn(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
 
 	// MARK: Inits
@@ -76,7 +80,6 @@ class MonthViewController: UIViewController ,GlobalUI {
 //		presenter.viewLoaded()
         self.setup()
     }
-
 }
 
 
@@ -110,13 +113,12 @@ extension MonthViewController: MonthPresenterViewProtocol {
 //        self.addChildViewController(nvc)
         setupRightBtn()
 
-
 //        epollAppointments()
-        
-        let now = DateInRegion() 
+        let now = DateInRegion()
         let startDate = (now - 18.days).absoluteDate
         let endDate =  (now + 18.days).absoluteDate
         checkAppointDates(dateSeg: [startDate,endDate])
+        memoNav = UINavigationController(rootViewController: MemoModule().view)
 	}
     
     override func viewWillAppear(_ animated: Bool) {
@@ -188,7 +190,7 @@ extension MonthViewController: MonthPresenterViewProtocol {
             
         })
     }
-
+    
 
     func setAppointBadge(n:Int){
         if let _ = Optional(appointmentsBtn) {
@@ -205,8 +207,23 @@ extension MonthViewController {
         recordBtn.setTitleColor(.white, for: .normal)
         recordBtn.setTitleColor(.black, for: .highlighted)
         recordBtn.addTarget(self, action: #selector(recordBtnHandle), for: .touchUpInside)
-        
+        recordBtn.badgeCount = 3
         let record = UIBarButtonItem(customView: recordBtn)
+        
+        memoBtn.setTitle("行事曆", for: .normal)
+        memoBtn.setTitleColor(.white, for: .normal)
+        memoBtn.setTitleColor(.black, for: .highlighted)
+        memoBtn.addTarget(self, action: #selector(memoBtnHandle), for: .touchUpInside)
+        let memo = UIBarButtonItem(customView: memoBtn )
+        
+        
+        codebarBtn.setTitle("條碼", for: .normal)
+        codebarBtn.setTitleColor(.white, for: .normal)
+        codebarBtn.setTitleColor(.black, for: .highlighted)
+        codebarBtn.addTarget(self, action: #selector(codebarBtnHandle), for: .touchUpInside)
+        let codeBarBtnItem  = UIBarButtonItem(customView: codebarBtn)
+        
+        
 //        record.target = self
 //        record.action = #selector(self.recordBtnHandle)
         //        b.addSubview(badge)
@@ -227,13 +244,26 @@ extension MonthViewController {
         //        navigationItem.rightBarButtonItem = rightButton
         
         //        navigationItem.rightBarButtonItems = [rightButton,rightButton2]
-        navigationItem.rightBarButtonItems = [record]
+        navigationItem.rightBarButtonItems = [codeBarBtnItem,memo,record]
     }
     
     
     func recordBtnHandle(){
        self.navigationController?.present(recordVC, animated: true)
     }
+    
+    func memoBtnHandle(){
+//       self.navigationController?.present(memoNav, animated: true)
+//        self.navigationController?.pushViewController(MemoModule().view, animated: true)
+       self.navigationController?.present(MemoModule().view, animated: true)
+    }
+    
+    func codebarBtnHandle(){
+        let navAppointVC = UINavigationController(rootViewController: codebarVC)
+        codebarVC.preSet()
+       self.navigationController?.present(navAppointVC, animated: true)
+    }
+    
     func appointBtnHandle(){
 //        appointVC.list = self.appointList 
         let navAppointVC = UINavigationController(rootViewController: appointVC)

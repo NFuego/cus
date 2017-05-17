@@ -53,6 +53,11 @@ final class MDApp : NSObject {
 //        let token = ""
 //        let accessTokenPlugin = AccesssTokenPlugin(token:token)
 //        let r =  RxMoyaProvider<TestAPI>(plugins:[])
+    
+    struct customer {
+        static var mail_account = "ios-customer@gmail.com"
+        static var stoken = ""
+    }
     struct info {
         static var appStartDate = DateInRegion().string(format: .iso8601(options: [.withFullDate]))
     } // fin config

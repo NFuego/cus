@@ -24,7 +24,7 @@ extension UIColor {
 fileprivate struct MDThem {
 }
 
-fileprivate struct ShenZouTheme {
+struct CustomerAppCr {
     // app 
     static let mainColor = UIColor(hex: "64b687")
     static let complementaryColor = UIColor(hex:"b6ddc7")
@@ -41,7 +41,11 @@ fileprivate struct ShenZouTheme {
     static let respiOpt1 = UIColor(hex:"77a7c9")
     static let respiOpt2 = UIColor(hex:"82b4d8")
     static let respiOpt3 = UIColor(hex:"9ec9e6")
+    
+    static let navBar = UIColor(hex: "FF4081")
 }
+
+
 
 extension UIColor {
     var toHexString: String {
@@ -62,48 +66,10 @@ extension UIColor {
 }
 
 extension UIColor {
-    class func zs_mainColor() -> UIColor {
-        return ShenZouTheme.mainColor
-    }
+//    class func zs_mainColor() -> UIColor {
+//        return ShenZouTheme.mainColor
+//    }
 
-    class func zs_compleColor() -> UIColor {
-       return ShenZouTheme.complementaryColor
-    }
-
-    class func zs_highlightedColor() -> UIColor {
-       return ShenZouTheme.highlightedColor
-    }
-    
-
-    class func zs_3in1Opt1() -> UIColor {
-        return ShenZouTheme.inOneOpt1
-    }
-    class func zs_3in1Opt2() -> UIColor {
-        return ShenZouTheme.inOneOpt2
-    }
-    
-    class func zs_3in1Opt3() -> UIColor {
-        return ShenZouTheme.inOneOpt3
-    }
-
-    class func zs_p2Opt1() -> UIColor {
-        return ShenZouTheme.p2Opt1
-    }
-    class func zs_p2Opt2() -> UIColor {
-        return ShenZouTheme.p2Opt2
-    }
-    class func zs_p2Opt3() -> UIColor {
-        return ShenZouTheme.p2Opt3
-    }
-    
-    class func zs_respiOpt1() -> UIColor {
-        return ShenZouTheme.respiOpt1
-    }
-    class func zs_respiOpt2() -> UIColor {
-        return ShenZouTheme.respiOpt2
-    }
-    class func zs_respiOpt3() -> UIColor {
-        return ShenZouTheme.respiOpt3
-    }
+   
     
 }

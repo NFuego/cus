@@ -39,6 +39,7 @@
     pod 'KingfisherExtension'
     pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
     pod 'CarouselSwift'
+    pod 'RSBarcodes_Swift', '~> 3.0.3'
 
 
 

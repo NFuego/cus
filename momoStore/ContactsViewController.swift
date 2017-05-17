@@ -32,9 +32,6 @@ class ContactsViewController: UIViewController {
     let contactShowView = ContactViewModule().view
     var cp:EPContactsPicker!
 
-    // right btns
-    var memoBtn = NavBarBtn(frame: CGRect(x: 0, y: 0, width: 60, height: 40))
-    var memoNav:UINavigationController!
 
 
 	// MARK: Inits
@@ -67,12 +64,6 @@ class ContactsViewController: UIViewController {
 extension ContactsViewController {
     func setupRightBtn(){
 //        b.badgeCount = 1
-        memoBtn.setTitle("行事曆", for: .normal)
-        memoBtn.setTitleColor(.white, for: .normal)
-//        memoBtn.setTitleColor(.black, for: .highlighted)
-        memoBtn.addTarget(self, action: #selector(memoBtnHandle), for: .touchUpInside)
-        
-        let memo = UIBarButtonItem(customView: memoBtn )
         
 //        record.target = self
 //        record.action = #selector(self.recordBtnHandle)
@@ -94,7 +85,7 @@ extension ContactsViewController {
         //        navigationItem.rightBarButtonItem = rightButton
         
         //        navigationItem.rightBarButtonItems = [rightButton,rightButton2]
-        navigationItem.rightBarButtonItems = [memo]
+//        navigationItem.rightBarButtonItems = [memo]
     }
     
     func setup(){
@@ -109,13 +100,6 @@ extension ContactsViewController {
 
        self.cp = EPContactsPicker(delegate: self, multiSelection:false, subtitleCellType: SubtitleCellValue.phoneNumber)
        self.view.addSubview(cp.view)
-
-        memoNav = UINavigationController(rootViewController: MemoModule().view)
-    }
-
-    func memoBtnHandle(){
-//       self.navigationController?.present(memoNav, animated: true)
-        self.navigationController?.pushViewController(MemoModule().view, animated: true)
     }
 }
 

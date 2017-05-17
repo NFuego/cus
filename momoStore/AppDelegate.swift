@@ -159,6 +159,7 @@ extension AppDelegate {
 
          CustomModule().present(from: self.viewController, style: .coverVertical, completion: nil)
  */
+        self.configUIAppearance()
         quickTest()
 
         //  Pre setting
@@ -442,4 +443,27 @@ extension AppDelegate {
         }
     }
 }
+
+extension AppDelegate {
+    func configUIAppearance(){
+//        let lbFt = UIFont.systemFont(ofSize: 15, weight: UIFontWeightThin)
+        let lbFt = UIFont(name: "HelveticaNeue-Thin", size: 27)
+//        [[UILabel appearance]setFont:[UIFont fontWithName:@"HelveticaNeue-Thin" size:32.0f]];
+        UILabel.appearance().defaultFont = lbFt
+    }
+}
+
+
+extension UILabel{
+    dynamic var defaultFont: UIFont? {
+        get { return self.font }
+        set {
+            let sizeOfOldFont = self.font.pointSize
+            let fontNameOfNewFont = newValue?.fontName
+            self.font = UIFont(name: fontNameOfNewFont!, size: sizeOfOldFont)
+        }
+    }
+}
+
+
 

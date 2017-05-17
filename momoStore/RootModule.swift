@@ -1,9 +1,7 @@
-//
 //  RootModule.swift
 //  Project: momoStore
 //
 //  Module: Root
-//
 //  MomoDidi 2016年
 
 // MARK: Imports
@@ -31,12 +29,13 @@ final class RootModule {
 	private(set) lazy var view: RootViewController = {
         let rootVC = RootViewController(presenter: self.presenter)
         rootVC.setViewControllers([ UINavigationController(rootViewController:MonthModule().view),
-                                    UINavigationController(rootViewController: WeekModule().view),
+//                                    UINavigationController(rootViewController: WeekModule().view),
                                     UINavigationController(rootViewController: CustomerDayModule().view),
+                                    UINavigationController(rootViewController: PetListModule().view),
                                     UINavigationController(rootViewController: ContactsModule().view),
                                     UINavigationController(rootViewController: PlanModule().view)
                                     ],animated: true)
-        rootVC.selectedIndex = 3
+        rootVC.selectedIndex = 0
 		return rootVC
 	}()
 

@@ -222,12 +222,9 @@ extension MemoViewController {
 // MARK: - Memo Presenter to View Protocol
 
 extension MemoViewController: MemoPresenterViewProtocol {
-
 	func set(title: String?) {
 		self.title = title
 	}
-
-    
 }
 
 extension MemoViewController : UITableViewDataSource {
@@ -248,11 +245,9 @@ extension MemoViewController : UITableViewDataSource {
 }
 
 extension MemoViewController : UITableViewDelegate {
-
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
-
 
     //If you want to change title
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {

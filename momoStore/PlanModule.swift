@@ -21,7 +21,6 @@ import SwiftyVIPER
 final class PlanModule {
 
 	// MARK: - Variables
-
 	private(set) lazy var interactor: PlanInteractor = {
 		return PlanInteractor()
 	}()
@@ -38,7 +37,7 @@ final class PlanModule {
 //		return PlanViewController(presenter: self.presenter)
         let monthVC = PlanViewController(presenter: self.presenter)
         monthVC.tabBarItem.icon(from: .MaterialIcon, code: "perm.contact.calendar" ,imageSize:CGSize(width: 20, height: 20),ofSize:20)
-        monthVC.tabBarItem.title = "預約"
+        monthVC.tabBarItem.title = "我的商店"
 		return monthVC
 	}()
 
