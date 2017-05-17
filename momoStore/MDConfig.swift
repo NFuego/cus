@@ -30,14 +30,6 @@ struct StoreSchedule {
     var isSundayAvailable = false
 }
 
-public struct StoreOpt {
-    var name = ""
-    var id = 0
-    var phone = ""
-    var address = ""
-    var website = ""
-    var description = ""
-}
 
 
 
@@ -63,7 +55,7 @@ final class MDApp : NSObject {
     struct store {
         static var initVC:UINavigationController? = nil
         static var schedule = StoreSchedule()
-        static var opt:StoreOpt = StoreOpt()
+        static var opt:StoreItemInfo? = nil
     }
 
     struct config {

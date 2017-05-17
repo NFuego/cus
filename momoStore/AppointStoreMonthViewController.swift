@@ -434,12 +434,12 @@ extension AppointStoreMonthViewController : JTAppleCalendarViewDataSource, JTApp
         let endDate = try! DateInRegion(absoluteDate: end!)
         let endStr = endDate.string(format: .custom("yyyy-MM-dd"))
         
-        let id = MDApp.store.opt.id
+        let id = MDApp.store.opt?.id
         print(beginStr)
         print(endStr)
         MDApp
             .api
-            .request(.StoreAppoint(storeId:id, start:beginStr,end:endStr))
+            .request(.StoreAppoint(storeId:id!, start:beginStr,end:endStr))
             .subscribe { (event) in
                 self.stopLoadingView()
                 switch event {

@@ -136,12 +136,6 @@ class PetListViewController: UIViewController, GlobalUI {
         self.list.dataSource = self as UITableViewDataSource
         self.view.addSubview(list)
         list.snp.makeConstraints { (make) in
-
-            /*
-           make.top.equalTo(readerVC.view.snp.bottom).offset(5)
-            make.width.equalTo(kCodeFrameWidth)
-            make.height.equalTo(120)
- */
             make.size.equalToSuperview()
         }
     }

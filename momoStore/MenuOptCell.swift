@@ -217,7 +217,7 @@ class StoreOptCell : UITableViewCell {
         super.prepareForReuse()
     }
     
-    func update(_ store:StoreOpt){
+    func update(_ store:StoreItemInfo){
 //        let date = DateInRegion()
 //        let str = date.string(format: .custom("yyyy-MM-dd HH:mm")) // example output: 2016-09-28 13:48:17
 
@@ -225,7 +225,7 @@ class StoreOptCell : UITableViewCell {
         lbPhone.text = "電話:\(store.phone)"
         lbAddress.text = "地址:\(store.address)"
         lbWebsite.text = "網站:\(store.website)"
-        lbDescrip.text = "說明:\(store.description)"
+//        lbDescrip.text = "說明:\(store.description)"
     }
 }
 
