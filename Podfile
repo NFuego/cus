@@ -41,6 +41,8 @@
     pod 'CarouselSwift'
     pod 'RSBarcodes_Swift', '~> 3.0.3'
     pod 'ListKit'
+    pod 'AnimatedCollectionViewLayout'
+    pod 'FSPagerView'
 
 
 target 'momoCustomer' do

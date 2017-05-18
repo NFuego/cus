@@ -213,7 +213,6 @@ extension AppointStoreMonthViewController: MonthPresenterViewProtocol {
         })
     }
     
-    
     func setAppointBadge(n:Int){
         if let _ = Optional(appointmentsBtn) {
             appointmentsBtn.badgeCount = n

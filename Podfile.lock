@@ -1,9 +1,11 @@
 PODS:
   - Alamofire (4.2.0)
+  - AnimatedCollectionViewLayout (0.3.0)
   - Badgeable (0.1.2)
   - CarouselSwift (1.3)
   - ConsistencyManager (4.0.0)
   - Eureka (2.0.0-beta.1)
+  - FSPagerView (0.5.2)
   - Fusuma (1.0.2)
   - ImageLoader (0.12.1)
   - JTAppleCalendar (6.1.1)
@@ -48,9 +50,11 @@ PODS:
   - XCGLogger/Core (4.0.0)
 
 DEPENDENCIES:
+  - AnimatedCollectionViewLayout
   - Badgeable
   - CarouselSwift
   - Eureka (from `https://github.com/xmartlabs/Eureka.git`, commit `3efe00e9a65a48c8823e7622dcd478efdc78b753`)
+  - FSPagerView
   - Fusuma
   - ImageLoader
   - JTAppleCalendar (~> 6.0)
@@ -107,10 +111,12 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  AnimatedCollectionViewLayout: 504b992a4258eb39d2dd2b2b48e84b4b95860fd7
   Badgeable: 6fc08430263f73f2bb40df3bdefa4eb1773e9ba7
   CarouselSwift: 3b0e9e7390494e6e08fde357bf18f881ade5109f
   ConsistencyManager: 323ee466a5c933973529dfa5baa5cbc238633a67
   Eureka: d014adf16406745e1a78d5790ea37ed130a0a8e5
+  FSPagerView: 922cf37757dceea5069b768c09706a1bf50a0ed8
   Fusuma: 4a1306b4cc7b7385a46865e9f64097b720db42d6
   ImageLoader: 0cbf0c2dc2dfb16c420744d295480914c35620e9
   JTAppleCalendar: fc53eb29ec81f8a90969e2d214b3aa610ab4e5b3
@@ -138,6 +144,6 @@ SPEC CHECKSUMS:
   Toucan: 47485bbc9cb4541ef6318d6886103e6eaf16e919
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 7b53818ccc0c2bdc92eb8dea2d6e7aafa8e1ca62
+PODFILE CHECKSUM: d93df238c2f53ccb957ebeeaecc7efe6b5c79ea7
 
 COCOAPODS: 1.2.1

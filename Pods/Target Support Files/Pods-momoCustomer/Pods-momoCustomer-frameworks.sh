@@ -90,10 +90,12 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Badgeable/Badgeable.framework"
   install_framework "$BUILT_PRODUCTS_DIR/CarouselSwift/CarouselSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ConsistencyManager/ConsistencyManager.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Eureka/Eureka.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/FSPagerView/FSPagerView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Fusuma/Fusuma.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ImageLoader/ImageLoader.framework"
   install_framework "$BUILT_PRODUCTS_DIR/JTAppleCalendar/JTAppleCalendar.framework"
@@ -123,10 +125,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Badgeable/Badgeable.framework"
   install_framework "$BUILT_PRODUCTS_DIR/CarouselSwift/CarouselSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ConsistencyManager/ConsistencyManager.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Eureka/Eureka.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/FSPagerView/FSPagerView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Fusuma/Fusuma.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ImageLoader/ImageLoader.framework"
   install_framework "$BUILT_PRODUCTS_DIR/JTAppleCalendar/JTAppleCalendar.framework"

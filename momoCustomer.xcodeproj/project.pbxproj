@@ -209,6 +209,7 @@
 		4BFD43A01E75296D00DEF11F /* AppointStoreMonthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFD439B1E75296D00DEF11F /* AppointStoreMonthRouter.swift */; };
 		4BFD43A11E75296D00DEF11F /* AppointStoreMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFD439C1E75296D00DEF11F /* AppointStoreMonthViewController.swift */; };
 		4F65A4C73123C1A5ED9BE0E6 /* Pods_momoCustomer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C42C23EDFCCDA3218CC8D3E /* Pods_momoCustomer.framework */; };
+		E7163C2C1ECD0DC8003BC022 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7163C2B1ECD0DC8003BC022 /* Media.xcassets */; };
 		E71E62111E4C1C5F002E8741 /* JsonFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E62101E4C1C5F002E8741 /* JsonFormats.swift */; };
 		E732CFC51E96395900008BE1 /* ServiceStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732CFC41E96395900008BE1 /* ServiceStruct.swift */; };
 		E732CFC71E963D2100008BE1 /* ImgUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732CFC61E963D2100008BE1 /* ImgUploader.swift */; };
@@ -225,6 +226,12 @@
 		E789939D1E7292AA0011BA71 /* AppointmetFormerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78993981E7292AA0011BA71 /* AppointmetFormerViewController.swift */; };
 		E78993A31E72960F0011BA71 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E78993A51E72960F0011BA71 /* Localizable.strings */; };
 		E79602F71E6FCCAA00D28F97 /* SwipeActImgvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79602F61E6FCCAA00D28F97 /* SwipeActImgvView.swift */; };
+		E79E4FDB1ECD15470058B4DC /* AdvertisementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79E4FD51ECD15470058B4DC /* AdvertisementInteractor.swift */; };
+		E79E4FDC1ECD15470058B4DC /* AdvertisementModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79E4FD61ECD15470058B4DC /* AdvertisementModule.swift */; };
+		E79E4FDD1ECD15470058B4DC /* AdvertisementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79E4FD71ECD15470058B4DC /* AdvertisementPresenter.swift */; };
+		E79E4FDE1ECD15470058B4DC /* AdvertisementRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79E4FD81ECD15470058B4DC /* AdvertisementRouter.swift */; };
+		E79E4FDF1ECD15470058B4DC /* AdvertisementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79E4FD91ECD15470058B4DC /* AdvertisementViewController.swift */; };
+		E79E4FE01ECD15470058B4DC /* AnimatedCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79E4FDA1ECD15470058B4DC /* AnimatedCollectionViewLayout.swift */; };
 		E7A00FD11E972CB800EC33A6 /* MemoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FCC1E972CB800EC33A6 /* MemoInteractor.swift */; };
 		E7A00FD21E972CB800EC33A6 /* MemoModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FCD1E972CB800EC33A6 /* MemoModule.swift */; };
 		E7A00FD31E972CB800EC33A6 /* MemoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FCE1E972CB800EC33A6 /* MemoPresenter.swift */; };
@@ -263,6 +270,16 @@
 		E7B9013B1E49B62D00EE59D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B70DEA01E0760E2000D9D5A /* AppDelegate.swift */; };
 		E7B9013C1E49B63000EE59D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B70DEA21E0760E2000D9D5A /* ViewController.swift */; };
 		E7B9013D1E49B63000EE59D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B70DEA21E0760E2000D9D5A /* ViewController.swift */; };
+		E7BA43301ECD165300324F9C /* AdPagerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BA432B1ECD165300324F9C /* AdPagerInteractor.swift */; };
+		E7BA43311ECD165300324F9C /* AdPagerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BA432C1ECD165300324F9C /* AdPagerModule.swift */; };
+		E7BA43321ECD165300324F9C /* AdPagerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BA432D1ECD165300324F9C /* AdPagerPresenter.swift */; };
+		E7BA43331ECD165300324F9C /* AdPagerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BA432E1ECD165300324F9C /* AdPagerRouter.swift */; };
+		E7BA43341ECD165300324F9C /* AdPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BA432F1ECD165300324F9C /* AdPagerViewController.swift */; };
+		E7BA433C1ECD197300324F9C /* StoreShopInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BA43371ECD197300324F9C /* StoreShopInteractor.swift */; };
+		E7BA433D1ECD197300324F9C /* StoreShopModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BA43381ECD197300324F9C /* StoreShopModule.swift */; };
+		E7BA433E1ECD197300324F9C /* StoreShopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BA43391ECD197300324F9C /* StoreShopPresenter.swift */; };
+		E7BA433F1ECD197300324F9C /* StoreShopRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BA433A1ECD197300324F9C /* StoreShopRouter.swift */; };
+		E7BA43401ECD197400324F9C /* StoreShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BA433B1ECD197300324F9C /* StoreShopViewController.swift */; };
 		E7C4BBD91E1636F1001B2C77 /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4BBD81E1636F1001B2C77 /* ScheduleVC.swift */; };
 		E7D2D46A1ECC539200A3763F /* PetListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D2D4651ECC539200A3763F /* PetListInteractor.swift */; };
 		E7D2D46B1ECC539200A3763F /* PetListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D2D4661ECC539200A3763F /* PetListModule.swift */; };
@@ -424,6 +441,7 @@
 		4BFD439C1E75296D00DEF11F /* AppointStoreMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointStoreMonthViewController.swift; sourceTree = "<group>"; };
 		7F63B598597BD693F2201D52 /* Pods-momoCustomer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momoCustomer.release.xcconfig"; path = "Pods/Target Support Files/Pods-momoCustomer/Pods-momoCustomer.release.xcconfig"; sourceTree = "<group>"; };
 		8C42C23EDFCCDA3218CC8D3E /* Pods_momoCustomer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_momoCustomer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7163C2B1ECD0DC8003BC022 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		E71E62101E4C1C5F002E8741 /* JsonFormats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonFormats.swift; sourceTree = "<group>"; };
 		E732CFC41E96395900008BE1 /* ServiceStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceStruct.swift; sourceTree = "<group>"; };
 		E732CFC61E963D2100008BE1 /* ImgUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgUploader.swift; sourceTree = "<group>"; };
@@ -444,6 +462,12 @@
 		E78993A61E7296100011BA71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E78993A71E7296110011BA71 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E79602F61E6FCCAA00D28F97 /* SwipeActImgvView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeActImgvView.swift; sourceTree = "<group>"; };
+		E79E4FD51ECD15470058B4DC /* AdvertisementInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisementInteractor.swift; sourceTree = "<group>"; };
+		E79E4FD61ECD15470058B4DC /* AdvertisementModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisementModule.swift; sourceTree = "<group>"; };
+		E79E4FD71ECD15470058B4DC /* AdvertisementPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisementPresenter.swift; sourceTree = "<group>"; };
+		E79E4FD81ECD15470058B4DC /* AdvertisementRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisementRouter.swift; sourceTree = "<group>"; };
+		E79E4FD91ECD15470058B4DC /* AdvertisementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisementViewController.swift; sourceTree = "<group>"; };
+		E79E4FDA1ECD15470058B4DC /* AnimatedCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedCollectionViewLayout.swift; sourceTree = "<group>"; };
 		E7A00FCC1E972CB800EC33A6 /* MemoInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoInteractor.swift; sourceTree = "<group>"; };
 		E7A00FCD1E972CB800EC33A6 /* MemoModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoModule.swift; sourceTree = "<group>"; };
 		E7A00FCE1E972CB800EC33A6 /* MemoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoPresenter.swift; sourceTree = "<group>"; };
@@ -467,6 +491,16 @@
 		E7A00FF41E97343000EC33A6 /* ContactViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewViewController.swift; sourceTree = "<group>"; };
 		E7A00FF51E97343000EC33A6 /* ImgRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgRow.swift; sourceTree = "<group>"; };
 		E7B9012D1E49B2B200EE59D9 /* ScheduleVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleVO.swift; sourceTree = "<group>"; };
+		E7BA432B1ECD165300324F9C /* AdPagerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdPagerInteractor.swift; sourceTree = "<group>"; };
+		E7BA432C1ECD165300324F9C /* AdPagerModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdPagerModule.swift; sourceTree = "<group>"; };
+		E7BA432D1ECD165300324F9C /* AdPagerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdPagerPresenter.swift; sourceTree = "<group>"; };
+		E7BA432E1ECD165300324F9C /* AdPagerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdPagerRouter.swift; sourceTree = "<group>"; };
+		E7BA432F1ECD165300324F9C /* AdPagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdPagerViewController.swift; sourceTree = "<group>"; };
+		E7BA43371ECD197300324F9C /* StoreShopInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreShopInteractor.swift; sourceTree = "<group>"; };
+		E7BA43381ECD197300324F9C /* StoreShopModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreShopModule.swift; sourceTree = "<group>"; };
+		E7BA43391ECD197300324F9C /* StoreShopPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreShopPresenter.swift; sourceTree = "<group>"; };
+		E7BA433A1ECD197300324F9C /* StoreShopRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreShopRouter.swift; sourceTree = "<group>"; };
+		E7BA433B1ECD197300324F9C /* StoreShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreShopViewController.swift; sourceTree = "<group>"; };
 		E7C4BBD81E1636F1001B2C77 /* ScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleVC.swift; sourceTree = "<group>"; };
 		E7D2D4651ECC539200A3763F /* PetListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetListInteractor.swift; sourceTree = "<group>"; };
 		E7D2D4661ECC539200A3763F /* PetListModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetListModule.swift; sourceTree = "<group>"; };
@@ -627,6 +661,10 @@
 		4B5323DE1E153FFE00EF41D8 /* vc */ = {
 			isa = PBXGroup;
 			children = (
+				E7BA43361ECD196200324F9C /* shop */,
+				E7BA43351ECD190700324F9C /* shopPromotion */,
+				E7BA432A1ECD164B00324F9C /* adPager */,
+				E79E4FD41ECD14D60058B4DC /* adVerticalScroller */,
 				E7D2D4821ECCED3A00A3763F /* petAddForm */,
 				E7D2D46F1ECC68D100A3763F /* codebar */,
 				E7A00FEF1E97342000EC33A6 /* contactShow */,
@@ -705,6 +743,7 @@
 		4B70DE9F1E0760E2000D9D5A /* momoStore */ = {
 			isa = PBXGroup;
 			children = (
+				E7163C2B1ECD0DC8003BC022 /* Media.xcassets */,
 				E7A00FE31E972DF600EC33A6 /* vendor */,
 				E79602F51E6FCC8F00D28F97 /* view */,
 				E7DA271B1E448A4200606798 /* enhancement */,
@@ -975,6 +1014,19 @@
 			name = view;
 			sourceTree = "<group>";
 		};
+		E79E4FD41ECD14D60058B4DC /* adVerticalScroller */ = {
+			isa = PBXGroup;
+			children = (
+				E79E4FD51ECD15470058B4DC /* AdvertisementInteractor.swift */,
+				E79E4FD61ECD15470058B4DC /* AdvertisementModule.swift */,
+				E79E4FD71ECD15470058B4DC /* AdvertisementPresenter.swift */,
+				E79E4FD81ECD15470058B4DC /* AdvertisementRouter.swift */,
+				E79E4FD91ECD15470058B4DC /* AdvertisementViewController.swift */,
+				E79E4FDA1ECD15470058B4DC /* AnimatedCollectionViewLayout.swift */,
+			);
+			name = adVerticalScroller;
+			sourceTree = "<group>";
+		};
 		E7A00FCB1E972CA900EC33A6 /* memoList */ = {
 			isa = PBXGroup;
 			children = (
@@ -1039,6 +1091,37 @@
 				E7B9012D1E49B2B200EE59D9 /* ScheduleVO.swift */,
 			);
 			name = VO;
+			sourceTree = "<group>";
+		};
+		E7BA432A1ECD164B00324F9C /* adPager */ = {
+			isa = PBXGroup;
+			children = (
+				E7BA432B1ECD165300324F9C /* AdPagerInteractor.swift */,
+				E7BA432C1ECD165300324F9C /* AdPagerModule.swift */,
+				E7BA432D1ECD165300324F9C /* AdPagerPresenter.swift */,
+				E7BA432E1ECD165300324F9C /* AdPagerRouter.swift */,
+				E7BA432F1ECD165300324F9C /* AdPagerViewController.swift */,
+			);
+			name = adPager;
+			sourceTree = "<group>";
+		};
+		E7BA43351ECD190700324F9C /* shopPromotion */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = shopPromotion;
+			sourceTree = "<group>";
+		};
+		E7BA43361ECD196200324F9C /* shop */ = {
+			isa = PBXGroup;
+			children = (
+				E7BA43371ECD197300324F9C /* StoreShopInteractor.swift */,
+				E7BA43381ECD197300324F9C /* StoreShopModule.swift */,
+				E7BA43391ECD197300324F9C /* StoreShopPresenter.swift */,
+				E7BA433A1ECD197300324F9C /* StoreShopRouter.swift */,
+				E7BA433B1ECD197300324F9C /* StoreShopViewController.swift */,
+			);
+			name = shop;
 			sourceTree = "<group>";
 		};
 		E7D2D4641ECC523000A3763F /* petList */ = {
@@ -1216,6 +1299,7 @@
 				4B70DEA61E0760E2000D9D5A /* Main.storyboard in Resources */,
 				E77C327B1E15F83D009340A9 /* Icons.xcassets in Resources */,
 				4B7370061E0B131F002EF1F6 /* profile.png in Resources */,
+				E7163C2C1ECD0DC8003BC022 /* Media.xcassets in Resources */,
 				E7D2D47F1ECC6F1800A3763F /* HelveticaNeue.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1299,6 +1383,7 @@
 				E7A00FD21E972CB800EC33A6 /* MemoModule.swift in Sources */,
 				E789939B1E7292AA0011BA71 /* AppointmetFormerPresenter.swift in Sources */,
 				4BFD439E1E75296D00DEF11F /* AppointStoreMonthModule.swift in Sources */,
+				E79E4FDF1ECD15470058B4DC /* AdvertisementViewController.swift in Sources */,
 				E71E62111E4C1C5F002E8741 /* JsonFormats.swift in Sources */,
 				E7A00FFB1E97343000EC33A6 /* ImgRow.swift in Sources */,
 				4B769D6F1E743C1F00AECD3B /* ToucheableImgView.swift in Sources */,
@@ -1325,9 +1410,11 @@
 				4BFD43951E75251300DEF11F /* StoreMainPresenter.swift in Sources */,
 				4B769D7C1E74BD7D00AECD3B /* Konstants.swift in Sources */,
 				4BCA7DD01E0869B300C42763 /* RootInteractor.swift in Sources */,
+				E7BA43341ECD165300324F9C /* AdPagerViewController.swift in Sources */,
 				4B769D8F1E74CD1900AECD3B /* AppointmentDayRouter.swift in Sources */,
 				4BCA7DD31E0869B300C42763 /* RootModule.swift in Sources */,
 				E789939D1E7292AA0011BA71 /* AppointmetFormerViewController.swift in Sources */,
+				E7BA433D1ECD197300324F9C /* StoreShopModule.swift in Sources */,
 				4B769D991E7512F800AECD3B /* ContactsPresenter.swift in Sources */,
 				4B769DA71E75135100AECD3B /* PlanRouter.swift in Sources */,
 				E7A00FDC1E972DDF00EC33A6 /* EPConstants.swift in Sources */,
@@ -1346,15 +1433,19 @@
 				4B5323D51E15355800EF41D8 /* OpenTimePresenter.swift in Sources */,
 				E7A00FFA1E97343000EC33A6 /* ContactViewViewController.swift in Sources */,
 				E79602F71E6FCCAA00D28F97 /* SwipeActImgvView.swift in Sources */,
+				E7BA43321ECD165300324F9C /* AdPagerPresenter.swift in Sources */,
+				E79E4FDB1ECD15470058B4DC /* AdvertisementInteractor.swift in Sources */,
 				E73598D81E70F8C900677703 /* AppoinmentsListRouter.swift in Sources */,
 				4B769D901E74CD1900AECD3B /* AppointmentDayViewController.swift in Sources */,
 				4B769D781E74BD4700AECD3B /* AppointmentCreateFormPresenter.swift in Sources */,
 				4B6879341E397189008EA4C9 /* MDConfig.swift in Sources */,
+				E7BA433E1ECD197300324F9C /* StoreShopPresenter.swift in Sources */,
 				4BCA7DF21E086C6600C42763 /* MonthRouter.swift in Sources */,
 				E7D2D46C1ECC539200A3763F /* PetListPresenter.swift in Sources */,
 				E73598D61E70F8C900677703 /* AppoinmentsListModule.swift in Sources */,
 				E7A00FF61E97343000EC33A6 /* ContactViewInteractor.swift in Sources */,
 				E7A00FEA1E97314900EC33A6 /* MemoAddFormInteractor.swift in Sources */,
+				E7BA43311ECD165300324F9C /* AdPagerModule.swift in Sources */,
 				4BFD43931E75251300DEF11F /* StoreMainInteractor.swift in Sources */,
 				4BCA7E2B1E086C9500C42763 /* MemberPresenter.swift in Sources */,
 				4B6879321E397189008EA4C9 /* DevKit.swift in Sources */,
@@ -1380,8 +1471,10 @@
 				4BFD43941E75251300DEF11F /* StoreMainModule.swift in Sources */,
 				4B432EF51E08A97F0049B3C6 /* MemberProfileInteractor.swift in Sources */,
 				4B769DA51E75135100AECD3B /* PlanModule.swift in Sources */,
+				E7BA43331ECD165300324F9C /* AdPagerRouter.swift in Sources */,
 				4BFD43A11E75296D00DEF11F /* AppointStoreMonthViewController.swift in Sources */,
 				4B5323C81E1532D800EF41D8 /* OpenTimeCell.swift in Sources */,
+				E7BA433F1ECD197300324F9C /* StoreShopRouter.swift in Sources */,
 				4B769D6D1E73F58500AECD3B /* AppointProfileViewController.swift in Sources */,
 				4B432F011E08A97F0049B3C6 /* MemberProfileViewController.swift in Sources */,
 				E7D2D4761ECC68F700A3763F /* CodeBarModule.swift in Sources */,
@@ -1396,10 +1489,12 @@
 				E732CFC51E96395900008BE1 /* ServiceStruct.swift in Sources */,
 				4B769D761E74BD4700AECD3B /* AppointmentCreateFormInteractor.swift in Sources */,
 				4BCA7E1A1E086C8A00C42763 /* DayRouter.swift in Sources */,
+				E79E4FDE1ECD15470058B4DC /* AdvertisementRouter.swift in Sources */,
 				E789939A1E7292AA0011BA71 /* AppointmetFormerModule.swift in Sources */,
 				4B432EFE1E08A97F0049B3C6 /* MemberProfileRouter.swift in Sources */,
 				4B5323E21E15400800EF41D8 /* ScheduleTimeView.swift in Sources */,
 				4B769D7A1E74BD4700AECD3B /* AppointmentCreateFormViewController.swift in Sources */,
+				E7BA433C1ECD197300324F9C /* StoreShopInteractor.swift in Sources */,
 				4BCA7E1D1E086C8A00C42763 /* DayViewController.swift in Sources */,
 				E7A00FF81E97343000EC33A6 /* ContactViewPresenter.swift in Sources */,
 				4B769D6C1E73F58500AECD3B /* AppointProfileRouter.swift in Sources */,
@@ -1410,7 +1505,9 @@
 				4BCA7E421E086CA100C42763 /* ConfigRouter.swift in Sources */,
 				E7D2D4891ECCED5000A3763F /* PetAddFormModule.swift in Sources */,
 				E7D2D4771ECC68F700A3763F /* CodeBarPresenter.swift in Sources */,
+				E7BA43301ECD165300324F9C /* AdPagerInteractor.swift in Sources */,
 				4BCA7E4B1E08810B00C42763 /* MemberCell.swift in Sources */,
+				E7BA43401ECD197400324F9C /* StoreShopViewController.swift in Sources */,
 				4BCA7E061E086C7800C42763 /* WeekRouter.swift in Sources */,
 				4B769D9B1E7512F800AECD3B /* ContactsViewController.swift in Sources */,
 				4BCA7E031E086C7800C42763 /* WeekPresenter.swift in Sources */,
@@ -1425,10 +1522,13 @@
 				4B769D791E74BD4700AECD3B /* AppointmentCreateFormRouter.swift in Sources */,
 				E7D2D4791ECC68F700A3763F /* CodeBarViewController.swift in Sources */,
 				4B769D8C1E74CD1900AECD3B /* AppointmentDayInteractor.swift in Sources */,
+				E79E4FDC1ECD15470058B4DC /* AdvertisementModule.swift in Sources */,
 				4B4B4DF81E703C8800E33E2F /* NaviBarBtn.swift in Sources */,
 				E7D2D4781ECC68F700A3763F /* CodeBarRouter.swift in Sources */,
+				E79E4FDD1ECD15470058B4DC /* AdvertisementPresenter.swift in Sources */,
 				4B6879301E397189008EA4C9 /* CellHeader.swift in Sources */,
 				4B769DA81E75135100AECD3B /* PlanViewController.swift in Sources */,
+				E79E4FE01ECD15470058B4DC /* AnimatedCollectionViewLayout.swift in Sources */,
 				E7A00FE11E972DDF00EC33A6 /* EPExtensions.swift in Sources */,
 				E73598D51E70F8C900677703 /* AppoinmentsListInteractor.swift in Sources */,
 				E7DA271D1E448BB500606798 /* MDService.swift in Sources */,
