@@ -171,12 +171,18 @@ extension AppDelegate {
 
         //
 		let rootV = RootModule().view
+        
+        // Todo comment out
+        let login =  LoginModule().view
 		
 //        let nav = UINavigationController(rootViewController: rootV)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
 		window?.makeKeyAndVisible()
-		window?.rootViewController = rootV
+        
+        let rootVC = login
+        
+		window?.rootViewController = rootVC
 		window?.backgroundColor = .white
 		window?.makeKeyAndVisible()
         

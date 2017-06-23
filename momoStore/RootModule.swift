@@ -35,7 +35,7 @@ final class RootModule {
                                     UINavigationController(rootViewController: ContactsModule().view),
                                     UINavigationController(rootViewController: PlanModule().view)
                                     ],animated: true)
-        rootVC.selectedIndex = 4
+        rootVC.selectedIndex = 0
 		return rootVC
 	}()
 

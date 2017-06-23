@@ -46,8 +46,6 @@ class PetAddFormViewController: FormViewController, GlobalUI, GlobalAlert {
 	override func viewDidLoad() {
     	super.viewDidLoad()
 		presenter.viewLoaded()
-    	super.viewDidLoad()
-		presenter.viewLoaded()
         self.preSet()
 		view.backgroundColor = .white
         self.setupForm()
